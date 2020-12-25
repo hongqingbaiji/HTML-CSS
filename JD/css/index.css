@@ -1,0 +1,211 @@
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    font-family: -apple-system,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+}
+img{
+    vertical-align: middle;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:#333;
+
+}
+.clearfix:before,
+.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{
+    clear:both;
+}
+.clearfix{
+    *zoom:1;
+}
+/* 顶部 header 开始 */
+.header{
+    height: 45px;
+    background-color: #333;
+    color: #fff;    
+}
+.header>div{
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+.header div:nth-child(1){
+    width: 8%;
+}
+.header div:nth-child(1) img{
+    width: 10px;
+}
+.header div:nth-child(2){
+    width: 10%;
+}
+.header div:nth-child(2) img{
+    width: 30px;
+    vertical-align: middle;
+}
+.header div:nth-child(3){
+    width: 57%;
+}
+.header div:nth-child(4){
+    float: right;
+    width: 25%;
+    background-color: #f63515;
+}
+/* 顶部 header 结束 */
+
+/* 搜索 search-wrap 开始 */
+.search-wrap{
+    position: fixed;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    height: 44px;
+    line-height: 44px;
+    overflow: hidden;
+}
+.search-wrap::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 40px;
+    height: 44px;
+    background: url(../images/s-btn.png) no-repeat center;
+    background-size: 50%;
+}
+.search-wrap::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '登录';
+    width: 40px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    color:#fff;
+}
+.search {
+    position: relative;
+    margin: 7px 45px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.search-btn{
+    width: 68px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding:3px 0 0 10px;
+}
+.search-btn i{
+    display: inline-block;
+    width: 4px;
+    height: 15px;
+    border-right: 1px solid #ddd;
+}
+.search-btn::before{
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 15px;
+    background: url(../images/jd-sprites.png) no-repeat 0 0;
+    background-size: 200px;
+}
+.search-btn::after{
+    display: inline-block;
+    margin-left: 4px;
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: url(../images/jd-sprites.png) no-repeat -84px 0;
+    background-size: 200px;
+}
+.search-ss{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 10px 0 70px;
+    height: 30px;
+    line-height: 30px;
+}
+/* 这里有个问题：input的宽度问题没有解决，检查可以发现问题 */
+.search-ss input{
+    width: 100%;
+    font-size: 12px;
+    color:#333;
+    border: 0;
+    outline: 0;
+
+}
+
+/* 搜索 search-wrap 结束 */
+/* 主内容区域 main 开始 */
+.main{
+    width: 100%;
+}
+.slider img{
+    width: 100%;
+}
+/* 品牌日 banner 开始 */
+.banner{
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+.banner>div{
+    float: left;
+    width: 33.33%;
+}
+.banner div img{
+    width: 100%;
+}
+/* 品牌日  banner 结束 */
+/* 导航栏 nav 开始 */
+.nav ul li{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.nav ul li a img {
+    height: 40px;
+    margin:10px 0;
+}
+.nav ul li a span{
+    display: block;
+    margin-bottom: 5px;
+}
+/* 导航栏 nav 结束 */
+
+/* 每日抽奖 news 开始 */
+.news>div{
+    float: left;
+}
+.news div:nth-of-type(1){
+    width: 50%;
+}
+.news div:nth-of-type(n+2){
+    width: 25%;
+    border-left:1px solid #ccc ;
+}
+.news div a img{
+    width: 100%;
+}
+/* 每日抽奖 news 结束 */
+
+/* 主内容区域 main 结束 */
