@@ -1,0 +1,84 @@
+body{
+	font:small/1.6em Verdana,Helvetica,Arial,sans-serif;
+	margin-left:20%;
+	margin-right:20%;
+}
+
+#left{
+	width:65%;
+
+	padding:0px 20px 20px 20px;
+	margin:0px 20px 20px 20px;
+
+	
+}
+#right{
+	width:20%;
+	border:thin solid #007e7e;
+	padding:10px 20px 20px 20px;
+	margin:20px;
+	background:top repeat-x url(images/cocktail.gif);
+	text-align:center;
+	line-height:1.2em;
+	float:right;
+}
+#right h2{
+	color:black;
+}
+#right h3{
+	color:#d12c47;
+}
+#footer{
+	font-size:0.6em;
+	text-align:center;
+	line-height:normal;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+
+#leftbottom span.cd{
+	font-style:italic;
+}
+#leftbottom span.name{
+	font-weight:bold;
+	font-size:1.1em;
+}
+h1,h2{
+	color:#007e7e;
+}
+h1{
+	font-size:1.7em;
+}
+h2{
+	font-size:1.3em;
+}
+#guarantee{
+	border:thin dashed white;  					/*边框*/
+	padding:25px 25px 25px 80px;				/*补白上右下左*/
+	margin:20px 100px 20px 60px;				/*边界*/
+	font-family:Georgia,"Times New Roman",Times,serif;
+	line-height:1.9em;
+	font-style:italic;
+	color:#444444;
+	background:#a7cece url(images/light.gif) top left no-repeat;
+
+}
+a:link{
+	color:#007e7e;
+}
+a:visited{
+	color:#333333;
+}
+a:hover{
+	color:red;
+}
+
+
+
+
+
+
+
+
+
+
