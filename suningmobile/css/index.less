@@ -1,23 +1,109 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-a {
-    color: #666;
-    text-decoration: none;
-}
-img {
-    vertical-align: middle;
-}
-li {
-    list-style: none;
-}
+// 把common样式表导入到index.css中
+@import "common";
 
-// 媒体查询
-html {
-    font-size: 50px;
+@basefont :50;
+body {
+    min-width: 320px;
+    max-width: 750px;
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+
 }
-@media screen and (max-width:319px){
-    
+// 顶部下载广告
+.xiazai {
+    position: relative;
+    width: 15rem;
+    height: 2rem;
+    img {
+        width: 100%;
+    }
+    .close {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: .4rem;
+        transform: translateY(-50%);
+        width: .6rem;
+        height: .6rem;
+        background: url(../images/close.png) no-repeat;
+        background-size: .6rem auto;
+    }
+}
+// 头部
+.header {
+    position: fixed;
+    width: 15rem;
+    height: 3.6rem;
+    background-color: #ffc001;
+
+    .header-1 {
+        position: relative;
+        overflow: hidden;
+        width: 15rem;
+        height: 1.76rem;
+        &::before {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: .4rem;
+            margin-top: -.6rem;
+            content: "";
+            width: .72rem;
+            height: 1.2rem;
+            background: url(../images/fenlei.png) no-repeat;
+            background-size: .72rem 1.2rem;
+        }
+        &::after {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            right: .4rem;
+            margin-top: -.6rem;
+            content: "";
+            width: .72rem;
+            height: 1.2rem;
+            background: url(../images/login.png) no-repeat;
+            background-size: .72rem 1.2rem; 
+        }
+        .header-con{
+            margin: .24rem auto 0;
+            width: 6.4rem;
+            height: 1.28rem;
+            background: url(../images/header2.gif) no-repeat;
+            background-size: 6.4rem 1.28rem;
+        }
+    }
+    .header-2 {
+        position: relative;
+        overflow: hidden;
+        height: 1.84rem; 
+        margin: 0 .4rem;
+        .search{
+            margin-top: .24rem;
+            height: 1.28rem;
+            background-color: #fff;
+            border-radius: .64rem;
+            line-height: 1.28rem;
+            color:#666;
+            font-size: .6rem;
+            padding-left: 1.4rem;
+        }
+        &::before{
+            position: absolute;
+            top: 50%;
+            left:.5rem;
+            margin-top: -.36rem;
+            content: "";
+            width: .72rem;
+            height: .72rem;
+            background: url(../images/fdj.png) no-repeat;
+            background-size: .72rem auto;
+            vertical-align: middle;
+
+        }
+
+    }
 }
