@@ -34,11 +34,9 @@ body {
 }
 // 头部
 .header {
-    position: fixed;
     width: 15rem;
     height: 3.6rem;
-    background-color: #ffc001;
-
+    background-color: #FFDB47;
     .header-1 {
         position: relative;
         overflow: hidden;
@@ -102,8 +100,165 @@ body {
             background: url(../images/fdj.png) no-repeat;
             background-size: .72rem auto;
             vertical-align: middle;
-
         }
 
     }
+}
+// banner图 
+.banner{
+    position: relative;
+    width: 15rem;
+    height: 4.82rem;
+    img{
+        width: 15rem;
+        height: 4.82rem;
+    }
+    .banner-a{
+        position: absolute;
+        top: 0;
+        left:.4rem;
+        width: 14.2rem;
+        height: 4.82rem;
+        background: url(../upload/banner1.jpg) no-repeat 0 -2.82rem;
+        background-size: 14.2rem 7.64rem;
+        border-radius: .3rem;  
+    }
+}
+// nav-one
+.nav-one {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: .1rem .4rem;
+    width: 14.2rem;
+    border-radius: .3rem;
+    overflow: hidden;
+    a{
+        display: inline-block;
+        flex: 33.33%;
+        width: 5rem;
+        img{
+            width: 100%;
+        }
+        // &:nth-child(-n+2){
+        //     border-right: 1px solid #fff;
+        // }
+    }
+}
+// nav-two
+.nav-two{
+    width: 15rem;
+    // background-color: #ddd;
+    .nav-two-ul{
+        display: flex;
+        flex-wrap: wrap;
+
+        li{
+            margin-top: .2rem;
+            flex: 20%;
+            a{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: .44rem;
+                span[class^="icon"]{
+                    width: 1.68rem;
+                    height: 1.68rem; 
+                    background-size: 1.68rem auto;   
+                }
+                .icon1{
+                    background: url(../upload/icon1.png) no-repeat;
+                }
+                .icon2{
+                    background: url(../upload/icon2.png) no-repeat;
+                }
+                .icon3{
+                    background: url(../upload/icon3.png) no-repeat;
+                }
+                .icon4{
+                    background: url(../upload/icon4.png) no-repeat;
+                }
+                .icon5{
+                    background: url(../upload/icon5.png) no-repeat;
+                }
+                .icon6{
+                    background: url(../upload/icon6.png) no-repeat;
+                }
+                .icon7{
+                    background: url(../upload/icon7.png) no-repeat;
+                }
+                .icon8{
+                    background: url(../upload/icon8.png) no-repeat;
+                }
+                .icon9{
+                    background: url(../upload/icon9.png) no-repeat;
+                }
+                .icon10{
+                    background: url(../upload/icon10.png) no-repeat;
+                }
+            }
+        }
+    }
+}
+
+// 广告
+.ad {
+    // display:flex;
+    margin: .4rem 0 2.2rem;
+    width: 14.2rem;
+    a{
+        &:nth-child(1){
+            // flex: 2;
+            img{
+                width: 7.47rem;
+                height: 4.68rem;
+            }
+        }
+        &:nth-child(2){
+            // flex: 1;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+
+            img{
+                width: 3.725rem;
+                height: 4.68rem;
+            }
+        }
+        &:nth-child(3){
+            // flex: 1;
+            img{
+                width: 3.725rem;
+                height: 4.68rem;
+            }
+        }
+    }
+}
+
+// 底部
+.footer {
+
+    position: fixed;
+    bottom: 0rem;
+    display: flex;
+    width: 15rem;
+    height: 2rem;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+    a{
+        flex:1;
+        font-size: .44rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        span[class^="footer-btn"]{
+            width: .96rem;
+            height: .96rem;
+            img{
+                width: .96rem;
+                height: .96rem;
+            }
+        }
+    }
+
 }

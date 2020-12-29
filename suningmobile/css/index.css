@@ -105,10 +105,9 @@ body {
   background-size: 0.6rem auto;
 }
 .header {
-  position: fixed;
   width: 15rem;
   height: 3.6rem;
-  background-color: #ffc001;
+  background-color: #FFDB47;
 }
 .header .header-1 {
   position: relative;
@@ -174,4 +173,137 @@ body {
   background: url(../images/fdj.png) no-repeat;
   background-size: 0.72rem auto;
   vertical-align: middle;
+}
+.banner {
+  position: relative;
+  width: 15rem;
+  height: 4.82rem;
+}
+.banner img {
+  width: 15rem;
+  height: 4.82rem;
+}
+.banner .banner-a {
+  position: absolute;
+  top: 0;
+  left: 0.4rem;
+  width: 14.2rem;
+  height: 4.82rem;
+  background: url(../upload/banner1.jpg) no-repeat 0 -2.82rem;
+  background-size: 14.2rem 7.64rem;
+  border-radius: 0.3rem;
+}
+.nav-one {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.1rem 0.4rem;
+  width: 14.2rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+.nav-one a {
+  display: inline-block;
+  flex: 33.33%;
+  width: 5rem;
+}
+.nav-one a img {
+  width: 100%;
+}
+.nav-two {
+  width: 15rem;
+}
+.nav-two .nav-two-ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-two .nav-two-ul li {
+  margin-top: 0.2rem;
+  flex: 20%;
+}
+.nav-two .nav-two-ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.44rem;
+}
+.nav-two .nav-two-ul li a span[class^="icon"] {
+  width: 1.68rem;
+  height: 1.68rem;
+  background-size: 1.68rem auto;
+}
+.nav-two .nav-two-ul li a .icon1 {
+  background: url(../upload/icon1.png) no-repeat;
+}
+.nav-two .nav-two-ul li a .icon2 {
+  background: url(../upload/icon2.png) no-repeat;
+}
+.nav-two .nav-two-ul li a .icon3 {
+  background: url(../upload/icon3.png) no-repeat;
+}
+.nav-two .nav-two-ul li a .icon4 {
+  background: url(../upload/icon4.png) no-repeat;
+}
+.nav-two .nav-two-ul li a .icon5 {
+  background: url(../upload/icon5.png) no-repeat;
+}
+.nav-two .nav-two-ul li a .icon6 {
+  background: url(../upload/icon6.png) no-repeat;
+}
+.nav-two .nav-two-ul li a .icon7 {
+  background: url(../upload/icon7.png) no-repeat;
+}
+.nav-two .nav-two-ul li a .icon8 {
+  background: url(../upload/icon8.png) no-repeat;
+}
+.nav-two .nav-two-ul li a .icon9 {
+  background: url(../upload/icon9.png) no-repeat;
+}
+.nav-two .nav-two-ul li a .icon10 {
+  background: url(../upload/icon10.png) no-repeat;
+}
+.ad {
+  margin: 0.4rem 0 2.2rem;
+  width: 14.2rem;
+}
+.ad a:nth-child(1) img {
+  width: 7.47rem;
+  height: 4.68rem;
+}
+.ad a:nth-child(2) {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+.ad a:nth-child(2) img {
+  width: 3.725rem;
+  height: 4.68rem;
+}
+.ad a:nth-child(3) img {
+  width: 3.725rem;
+  height: 4.68rem;
+}
+.footer {
+  position: fixed;
+  bottom: 0rem;
+  display: flex;
+  width: 15rem;
+  height: 2rem;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.footer a {
+  flex: 1;
+  font-size: 0.44rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.footer a span[class^="footer-btn"] {
+  width: 0.96rem;
+  height: 0.96rem;
+}
+.footer a span[class^="footer-btn"] img {
+  width: 0.96rem;
+  height: 0.96rem;
 }
