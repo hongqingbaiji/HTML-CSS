@@ -9,6 +9,7 @@ a {
 }
 img {
   vertical-align: middle;
+  border: none;
 }
 li {
   list-style: none;
@@ -263,6 +264,7 @@ body {
   background: url(../upload/icon10.png) no-repeat;
 }
 .ad {
+  display: flex;
   margin: 0.4rem 0 2.2rem;
   width: 14.2rem;
 }
