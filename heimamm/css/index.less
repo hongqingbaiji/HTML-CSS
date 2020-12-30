@@ -19,7 +19,6 @@ body {
     max-width: 750px;
     margin: 0 auto;
     line-height: 1.5;
-    height: 1500px;
     background-color: #f2f4f7;
 }
 
@@ -61,4 +60,209 @@ body {
 // go
 .go{
     margin: 0 .4rem;
+}
+// 内容区域
+.content {
+    margin-top: 10px;
+    background-color: #fff;
+    .con-hd{
+        display: flex;
+        justify-content: space-between;
+        height: 2.666667rem;
+        line-height: 2.666667rem;
+        h4 {
+            font-size: .746667rem;
+            color:#333;
+            margin-left: .586667rem;
+            &::before{
+                content: "";
+                display: inline-block;
+                padding-right: .48rem;
+                width: 1.013333rem;
+                height: 1.013333rem;
+                background: url(../images/i2.png) no-repeat;
+                background-size: 1.013333rem 1.013333rem;
+                vertical-align: middle;
+            }
+        }
+        a{
+            font-size: .586667rem;
+            color: #999;
+            margin-right: .586667rem;
+        }
+    }
+    .get-job-focus{
+        position: relative;
+        margin: 0 .8rem;
+        height: 12.64rem;
+
+        .swiper-container {
+            width: 14.4rem;
+            height: 100%;
+          }
+          .swiper-slide {
+
+            text-align: center;
+            background: #fff;
+      
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            transition: 300ms;
+            transform: scale(0.8);
+            opacity: 0.4;
+            
+            a{
+                width: 9.013333rem;
+                height: 10.026667rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            p{
+                font-size: .666667rem;
+                color: #333;
+                width: 9.013333rem;
+                margin-top: .48rem;
+            }
+          }
+          .swiper-slide-active,
+          .swiper-slide-duplicate-active{
+            transform: scale(1);
+            z-index: 999;
+            opacity: 1;
+          }
+    }
+}
+
+//充电学习
+.con-study{
+    margin: .266667rem 0 3.3rem;
+    background-color: #fff;
+    .con-hd{
+        display: flex;
+        justify-content: space-between;
+        height: 2.666667rem;
+        line-height: 2.666667rem;
+        h4 {
+            font-size: .746667rem;
+            color:#333;
+            margin-left: .586667rem;
+            
+            &::before{
+                content: "";
+                display: inline-block;
+                padding-right: .48rem;
+                width: 1.013333rem;
+                height: 1.013333rem;
+                background: url(../images/i1.png) no-repeat;
+                background-size: 1.013333rem 1.013333rem;
+                vertical-align: middle;
+            }
+        }
+        a{
+            font-size: .586667rem;
+            color: #999;
+            margin-right: .586667rem;
+        }
+    }
+    .con-bd {
+        margin: 0 0 .746667rem .533333rem;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+  
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        border-radius: .266667rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+
+        a{
+            width: 7.706667rem;
+            height: 9.066667rem;
+            img{
+                width: 7.253333rem;
+                height: 4.56rem;
+                margin: 0 auto;
+            }
+
+            p{
+                text-align: left;
+                font-size: .666667rem;
+                color: #333;
+                width: 7.253333rem;
+                margin: .48rem 0 0 .266667rem;
+    
+                .p2{
+                    font-size: .693333rem;
+                }
+                span{
+                    color: #ff4400;
+                }
+            }
+        }
+    }
+}
+// 底部区域
+.footer{
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    width: 100%;
+    max-width: 20rem;
+    // min-width: 8.533333rem;
+    display: flex;
+    height: 3.013333rem;
+    background-color: #fff;
+
+    // justify-content: center;
+    a{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: .586667rem;
+        color: #666;
+        img{
+            width: 1.066667rem;
+            height: 1.066667rem;
+        }
+        span{
+            margin-top: .266667rem;
+        }
+    }
+
 }

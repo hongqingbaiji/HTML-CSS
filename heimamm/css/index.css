@@ -18,7 +18,6 @@ body {
   max-width: 750px;
   margin: 0 auto;
   line-height: 1.5;
-  height: 1500px;
   background-color: #f2f4f7;
 }
 @media screen and (min-width: 750px) {
@@ -56,4 +55,190 @@ body {
 }
 .go {
   margin: 0 0.4rem;
+}
+.content {
+  margin-top: 10px;
+  background-color: #fff;
+}
+.content .con-hd {
+  display: flex;
+  justify-content: space-between;
+  height: 2.666667rem;
+  line-height: 2.666667rem;
+}
+.content .con-hd h4 {
+  font-size: 0.746667rem;
+  color: #333;
+  margin-left: 0.586667rem;
+}
+.content .con-hd h4::before {
+  content: "";
+  display: inline-block;
+  padding-right: 0.48rem;
+  width: 1.013333rem;
+  height: 1.013333rem;
+  background: url(../images/i2.png) no-repeat;
+  background-size: 1.013333rem 1.013333rem;
+  vertical-align: middle;
+}
+.content .con-hd a {
+  font-size: 0.586667rem;
+  color: #999;
+  margin-right: 0.586667rem;
+}
+.content .get-job-focus {
+  position: relative;
+  margin: 0 0.8rem;
+  height: 12.64rem;
+}
+.content .get-job-focus .swiper-container {
+  width: 14.4rem;
+  height: 100%;
+}
+.content .get-job-focus .swiper-slide {
+  text-align: center;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  transition: 300ms;
+  transform: scale(0.8);
+  opacity: 0.4;
+}
+.content .get-job-focus .swiper-slide a {
+  width: 9.013333rem;
+  height: 10.026667rem;
+}
+.content .get-job-focus .swiper-slide a img {
+  width: 100%;
+  height: 100%;
+}
+.content .get-job-focus .swiper-slide p {
+  font-size: 0.666667rem;
+  color: #333;
+  width: 9.013333rem;
+  margin-top: 0.48rem;
+}
+.content .get-job-focus .swiper-slide-active,
+.content .get-job-focus .swiper-slide-duplicate-active {
+  transform: scale(1);
+  z-index: 999;
+  opacity: 1;
+}
+.con-study {
+  margin: 0.266667rem 0 3.3rem;
+  background-color: #fff;
+}
+.con-study .con-hd {
+  display: flex;
+  justify-content: space-between;
+  height: 2.666667rem;
+  line-height: 2.666667rem;
+}
+.con-study .con-hd h4 {
+  font-size: 0.746667rem;
+  color: #333;
+  margin-left: 0.586667rem;
+}
+.con-study .con-hd h4::before {
+  content: "";
+  display: inline-block;
+  padding-right: 0.48rem;
+  width: 1.013333rem;
+  height: 1.013333rem;
+  background: url(../images/i1.png) no-repeat;
+  background-size: 1.013333rem 1.013333rem;
+  vertical-align: middle;
+}
+.con-study .con-hd a {
+  font-size: 0.586667rem;
+  color: #999;
+  margin-right: 0.586667rem;
+}
+.con-study .con-bd {
+  margin: 0 0 0.746667rem 0.533333rem;
+}
+.con-study .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.con-study .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 0.266667rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.con-study .swiper-slide a {
+  width: 7.706667rem;
+  height: 9.066667rem;
+}
+.con-study .swiper-slide a img {
+  width: 7.253333rem;
+  height: 4.56rem;
+  margin: 0 auto;
+}
+.con-study .swiper-slide a p {
+  text-align: left;
+  font-size: 0.666667rem;
+  color: #333;
+  width: 7.253333rem;
+  margin: 0.48rem 0 0 0.266667rem;
+}
+.con-study .swiper-slide a p .p2 {
+  font-size: 0.693333rem;
+}
+.con-study .swiper-slide a p span {
+  color: #ff4400;
+}
+.footer {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  width: 100%;
+  max-width: 20rem;
+  display: flex;
+  height: 3.013333rem;
+  background-color: #fff;
+}
+.footer a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.586667rem;
+  color: #666;
+}
+.footer a img {
+  width: 1.066667rem;
+  height: 1.066667rem;
+}
+.footer a span {
+  margin-top: 0.266667rem;
 }
