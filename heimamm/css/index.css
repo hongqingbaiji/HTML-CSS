@@ -33,6 +33,7 @@ body {
   height: 2.133333rem;
   text-align: center;
   line-height: 2.133333rem;
+  font-size: 0.56rem;
   border-bottom: 1px solid #eaeaea;
 }
 .nav {
@@ -168,6 +169,7 @@ body {
 }
 .con-study .con-bd {
   margin: 0 0 0.746667rem 0.533333rem;
+  padding-bottom: 0.6rem;
 }
 .con-study .swiper-container {
   width: 100%;
