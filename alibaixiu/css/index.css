@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/* 修改container的最大宽度为1280px 设计稿是1280 把超过1280px的屏幕大小默认成1280px */
+
+@media screen and (min-width:1280px) {
+    .container {
+        width: 1280px;
+    }
+}
+
+header {
+    padding-left: 0 !important;
+}
+
+.logo {
+    background-color: #429ad9;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.nav ul {
+    border-bottom: 1px solid #ccc;
+}
+
+.nav li {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 30px;
+    font-size: 18px;
+    background-color: #eee;
+}
+
+.nav li a::before {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.nav li a:hover {
+    color: #333;
+}
+
+.nav li:hover {
+    background-color: #fff;
+}
+
+
+/* article 区域 */
+
+
+/* news */
+
+.img1 {
+    width: 50%;
+    height: 271px;
+    padding-left: 0;
+}
+
+.img1 a img {
+    width: 100%;
+    height: 100%;
+}
+
+.img2,
+.img3,
+.img4,
+.img5 {
+    width: 50%;
+    height: 128px;
+    /* text-align: center; */
+    padding-left: 0;
+}
+
+.img2,
+.img3 {
+    margin-bottom: 15px;
+}
+
+.img2 img,
+.img3 img,
+.img4 img,
+.img5 img {
+    width: 100%;
+    height: 100%;
+}
+
+.news a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.news a p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    /* line-height: 40px; */
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-size: 20px;
+    padding: 5px 5px 0;
+    margin-bottom: 0;
+}
+
+.news .img2 a p,
+.news .img3 a p,
+.news .img4 a p,
+.news .img5 a p {
+    font-size: 14px;
+    padding: 0 5px 0;
+}
+
+
+/* publish */
+
+.publish-con {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.publish-con:nth-child(1) {
+    margin-top: 15px;
+    border-top: 1px solid #ccc;
+}
+
+.publish-con a img {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.banner {
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.hot {
+    display: block;
+    margin-top: 20px;
+    padding: 0 20px 20px;
+    border: 1px solid #ccc;
+}
+
+.hot span {
+    /* padding: 10px 15px; */
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+
+.hot p {
+    font-size: 12px;
+}
