@@ -18,6 +18,10 @@
         table tr {
             height: 40px;
         }
+        
+        .bg {
+            background-color: pink;
+        }
     </style>
 </head>
 
@@ -107,11 +111,17 @@
         var trs = document.querySelector('tbody').querySelectorAll('tr');
         for (var i = 0; i < trs.length; i++) {
             trs[i].onmouseover = function() {
-                for (var i = 0; i < trs.length; i++) {
-                    trs[i].style.backgroundColor = '';
-                }
-                this.style.backgroundColor = 'pink';
+                // for (var i = 0; i < trs.length; i++) {
+                //     trs[i].style.backgroundColor = '';
+                // }
 
+                // this.style.backgroundColor = 'pink';
+                this.className = 'bg';
+
+            }
+            trs[i].onmouseout = function() {
+                // this.style.backgroundColor = '';
+                this.className = '';
             }
         }
     </script>
