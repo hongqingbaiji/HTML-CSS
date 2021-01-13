@@ -11,16 +11,12 @@
             font-size: 14px;
         }
         
+        table thead tr {
+            background-color: pink;
+        }
+        
         table tr {
-            height: 30px;
-        }
-        
-        table tr:nth-child(even) {
-            background-color: #fff;
-        }
-        
-        table tr:nth-child(odd) {
-            background-color: #eee;
+            height: 40px;
         }
     </style>
 </head>
@@ -30,73 +26,95 @@
     <h4>学习初衷:浪费了太多时间，越长大越害怕被淘汰；想做些比测试更有意思的事情</h4>
     <h4>学习日记:</h4>
     <table border="1">
-        <tr>
-            <th>时间</th>
-            <th>学习日记</th>
-            <th>学习心得</th>
-        </tr>
-        <tr>
-            <th>2020/11/19</th>
-            <td>看了《Head First HTML 与 CSS（第2版）》</td>
-            <td>既然决定了就去做吧，永远记住这段你没有什么可以失去的时期</td>
-        </tr>
-        <tr>
-            <th>2020/12/1</th>
-            <td>看完了《Head First HTML 与 CSS（第2版）》</td>
-            <td>虽然说这本书的知识有些过时，但还是让我产生了挺多兴趣</td>
-        </tr>
-        <tr>
-            <th>2020/12/2</th>
-            <td>开始看B站pink老师的HTML5+CSS3视频</td>
-            <td>希望能学习巩固html5和css3的知识</td>
-        </tr>
-        <tr>
-            <th>2020/12/20</th>
-            <td>看完了B站pink老师H5C3视频部分</td>
-            <td>感觉收获挺大，能独立完成一个普遍页面的书写</td>
-        </tr>
-        <tr>
-            <th>2020/12/21</th>
-            <td>继续看B站pink老师的移动端布局视频</td>
-            <td>先把布局看完吧，之后再开始js</td>
-        </tr>
-        <tr>
-            <th>2020/12/25</th>
-            <td>了解了一点git和github；查看了freecodecamp，要经常抽空去通关~</td>
-            <td>终于不用再每次把代码拷贝到云盘了...吗？</td>
-        </tr>
-        <tr>
-            <th>2020/12/28</th>
-            <td>为了理解git,通了两个宵，心累</td>
-            <td>现阶段会上传会拉取项目就行，以后再精学一下</td>
-        </tr>
-        <tr>
-            <th>2020/12/29</th>
-            <td>继续完成suningmobile项目</td>
-            <td>主要用到了flex+rem+媒体查询，媒体查询可以用flexible.js来做，项目只做了前半部分</td>
-        </tr>
-        <tr>
-            <th>2020/12/30</th>
-            <td>开始了黑马面面项目</td>
-            <td>主要用到了flex+rem+flexible.js，学了慕客，一个切图网页</td>
-        </tr>
-        <tr>
-            <th>2020/12/31</th>
-            <td>完成了黑马面面项目</td>
-            <td>用了swiper插件，熟悉了一些轮播图,日常学习了响应式布局，使用bootstrap框架，栅格系统；定一个目标，元旦三天把bootstrap框架、swiper插件属性一下</td>
-        </tr>
-        <tr>
-            <th>2021/1/1</th>
-            <td>制作阿里百秀项目中</td>
-            <td>主要目的是熟悉bootstrap框架</td>
-        </tr>
-        <tr>
-            <th>2021/1/2</th>
-            <td>看完了B站pink老师H5C3的入门视频</td>
-            <td>一共54个小时，正好看了一个月；自我感觉学到了不少东西， 接下来就是巩固+进入js的学习了， 本来预定深入了解下bootstrap框架，经了解这个框架目前使用性不强，决定放弃
-            </td>
-        </tr>
+        <thead>
+            <tr>
+                <th>时间</th>
+                <th>学习日记</th>
+                <th>学习心得</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>2020/11/19</th>
+                <td>看了《Head First HTML 与 CSS（第2版）》</td>
+                <td>既然决定了就去做吧，永远记住这段你没有什么可以失去的时期</td>
+            </tr>
+            <tr>
+                <th>2020/12/1</th>
+                <td>看完了《Head First HTML 与 CSS（第2版）》</td>
+                <td>虽然说这本书的知识有些过时，但还是让我产生了挺多兴趣</td>
+            </tr>
+            <tr>
+                <th>2020/12/2</th>
+                <td>开始看B站pink老师的HTML5+CSS3视频</td>
+                <td>希望能学习巩固html5和css3的知识</td>
+            </tr>
+            <tr>
+                <th>2020/12/20</th>
+                <td>看完了B站pink老师H5C3视频部分</td>
+                <td>感觉收获挺大，能独立完成一个普遍页面的书写</td>
+            </tr>
+            <tr>
+                <th>2020/12/21</th>
+                <td>继续看B站pink老师的移动端布局视频</td>
+                <td>先把布局看完吧，之后再开始js</td>
+            </tr>
+            <tr>
+                <th>2020/12/25</th>
+                <td>了解了一点git和github；查看了freecodecamp，要经常抽空去通关~</td>
+                <td>终于不用再每次把代码拷贝到云盘了...吗？</td>
+            </tr>
+            <tr>
+                <th>2020/12/28</th>
+                <td>为了理解git,通了两个宵，心累</td>
+                <td>现阶段会上传会拉取项目就行，以后再精学一下</td>
+            </tr>
+            <tr>
+                <th>2020/12/29</th>
+                <td>继续完成suningmobile项目</td>
+                <td>主要用到了flex+rem+媒体查询，媒体查询可以用flexible.js来做，项目只做了前半部分</td>
+            </tr>
+            <tr>
+                <th>2020/12/30</th>
+                <td>开始了黑马面面项目</td>
+                <td>主要用到了flex+rem+flexible.js，学了慕客，一个切图网页</td>
+            </tr>
+            <tr>
+                <th>2020/12/31</th>
+                <td>完成了黑马面面项目</td>
+                <td>用了swiper插件，熟悉了一些轮播图,日常学习了响应式布局，使用bootstrap框架，栅格系统；定一个目标，元旦三天把bootstrap框架、swiper插件属性一下</td>
+            </tr>
+            <tr>
+                <th>2021/1/1</th>
+                <td>制作阿里百秀项目中</td>
+                <td>主要目的是熟悉bootstrap框架</td>
+            </tr>
+            <tr>
+                <th>2021/1/2</th>
+                <td>看完了B站pink老师H5C3的入门视频</td>
+                <td>一共54个小时，正好看了一个月；自我感觉学到了不少东西， 接下来就是巩固+进入js的学习了， 本来预定深入了解下bootstrap框架，经了解这个框架目前使用性不强，决定放弃
+                </td>
+            </tr>
+            <tr>
+                <th>2021/1/13</th>
+                <td>JS学习中</td>
+                <td>好久没有更新学习日记，因为最近在学JS，1月3日至1月9日再看《JS高级程序设计》，看的很迷，越看越厌倦JS，随后果断放弃，在B站找视频教学，发现学习更有动力，到今日为止，已经学到了DOM，终于和浏览器有了交互，很是欣喜。遂想用JS把这个界面稍微修饰下</td>
+            </tr>
+        </tbody>
     </table>
+
+    <script>
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function() {
+                for (var i = 0; i < trs.length; i++) {
+                    trs[i].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'pink';
+
+            }
+        }
+    </script>
 </body>
 
 </html>
