@@ -9,7 +9,11 @@
 
     <!-- 引入CSS样式表 -->
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <!-- 引入js样式表 -->
+    <script src="js/swiper.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -31,7 +35,7 @@
                 <i></i>
             </div>
             <div class="search-ss">
-                <input type="text" placeholder="空气净化器家用" >
+                <input type="text" placeholder="空气净化器家用">
             </div>
         </div>
     </div>
@@ -40,7 +44,21 @@
     <div class="main">
         <!-- 滑动图 -->
         <div class="slider">
-            <img src="upload/banner.dpg" alt="">
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="upload/banner.dpg" alt=""></div>
+                    <div class="swiper-slide"><img src="upload/banner1.dpg" alt=""></div>
+                    <div class="swiper-slide"><img src="upload/banner2.dpg" alt=""></div>
+                    <div class="swiper-slide"><img src="upload/banner3.dpg" alt=""></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
         </div>
         <!-- 品牌日 -->
         <div class="banner">
@@ -57,16 +75,36 @@
         <!-- 导航栏 -->
         <div class="nav clearfix">
             <ul>
-                <li><a href="#"><img src="upload/nav1.webp" alt=""><span>京东超市</span></a></li>
-                <li><a href="#"><img src="upload/nav2.webp" alt=""><span>全球购</span></a></li>
-                <li><a href="#"><img src="upload/nav3.webp" alt=""><span>京东充值</span></a></li>
-                <li><a href="#"><img src="upload/nav1.webp" alt=""><span>京东超市</span></a></li>
-                <li><a href="#"><img src="upload/nav2.webp" alt=""><span>全球购</span></a></li>
-                <li><a href="#"><img src="upload/nav3.webp" alt=""><span>京东充值</span></a></li>
-                <li><a href="#"><img src="upload/nav1.webp" alt=""><span>京东超市</span></a></li>
-                <li><a href="#"><img src="upload/nav2.webp" alt=""><span>全球购</span></a></li>
-                <li><a href="#"><img src="upload/nav3.webp" alt=""><span>京东充值</span></a></li>
-                <li><a href="#"><img src="upload/nav1.webp" alt=""><span>京东超市</span></a></li>
+                <li>
+                    <a href="#"><img src="upload/nav1.webp" alt=""><span>京东超市</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="upload/nav2.webp" alt=""><span>全球购</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="upload/nav3.webp" alt=""><span>京东充值</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="upload/nav1.webp" alt=""><span>京东超市</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="upload/nav2.webp" alt=""><span>全球购</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="upload/nav3.webp" alt=""><span>京东充值</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="upload/nav1.webp" alt=""><span>京东超市</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="upload/nav2.webp" alt=""><span>全球购</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="upload/nav3.webp" alt=""><span>京东充值</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="upload/nav1.webp" alt=""><span>京东超市</span></a>
+                </li>
             </ul>
         </div>
         <!-- 每日抽奖 -->
