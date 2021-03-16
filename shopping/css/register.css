@@ -86,17 +86,18 @@
 
 .anquan {
     display: inline-block;
-    padding-left: 132px;
+    padding-left: 154px;
     margin-bottom: 10px;
 }
 
-.ruo,
-.zhong,
-.qiang {
+.zcul li .ruo,
+.zcul li .zhong,
+.zcul li .qiang {
     display: inline-block;
     width: 30px;
     text-align: center;
     color: #fff;
+    margin-left: 0px;
 }
 
 .ruo {
@@ -120,6 +121,10 @@
 .zcul .check {
     margin-right: 0;
     width: 88px;
+}
+
+.zcul a {
+    color: blue;
 }
 
 .wczc {
