@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh_CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,10 @@
     <link rel="stylesheet" href="css/register.css">
     <!-- 引入字体样式 -->
     <link rel="stylesheet" href="fonts/iconfont.css">
+    <!-- 引入js -->
+    <script src="js/register.js"></script>
 </head>
+
 <body>
     <div class="zhuce-hd w">
         <h1>
@@ -27,50 +31,19 @@
         </div>
         <div class="zhuce-con2">
             <form action="" method="get">
-                <table class="table">
-                    <tr>
-                        <th>手机号：</th>
-                        <td><input type="tel" name="tel" id=""></td>
-                        <td>手机号码格式不正确，请重新输入</td>
-                    </tr>
-                    <tr>
-                        <th>短信验证码：</th>
-                        <td><input type="text" name="yanzhengma" id=""></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>登录密码：</th>
-                        <td>
-                            <input type="password" name="pwd" id="">
-                            <div>安全程度
-                                <span>弱</span>
-                                <span>中</span>
-                                <span>强</span>
-                            </div>
-                        </td>
-                        <td>密码不少于6位数，请重新输入</td>
-                    </tr>
-                    <tr>
-                        <th>确认密码：</th>
-                        <td><input type="password" name="pwdagain" id=""></td>
-                        <td>密码不一致，请重新输入</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>
-                            <input type="checkbox" name="" id="" checked="checked">
-                            同意协议并注册 <a href="#">《知果果用户协议》</a> 
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>
-                            <input type="submit" value="完成注册">
-                        </td>
-                        <td></td>
-                    </tr>
-                </table>
+                <ul class="zcul">
+                    <li><label for="tel">手机号：</label><input type="text" id="tel"><span class="telspan">请输入手机号码</span></li>
+                    <li><label for="qq">QQ：</label><input type="text" id="qq"><span></span></li>
+                    <li><label for="uname">昵称：</label><input type="text" id="uname"><span></span></li>
+                    <li><label for="yzm">短信验证码：</label><input type="text" id="yzm"><button class="yzm">发送验证码</button></li>
+                    <li><label for="pwd">登录密码：</label><input type="password" id="pwd"><span>请输入密码</span></li>
+                    <li><span class="anquan">安全程度</span><span class="ruo">弱</span><span class="zhong">中</span><span class="qiang">强</span></li>
+                    <li><label for="pwd2">确认密码：</label><input type="password" id="pwd2"><span>请再次输入密码</span></li>
+                    <li><input type="checkbox" id="check"><label for="check" class="check">同意协议并注册</label>
+                        <a href="javascript:;">《用户协议》</a>
+                    </li>
+                    <li><button class="wczc">完成注册</button></li>
+                </ul>
             </form>
         </div>
     </div>
@@ -78,4 +51,5 @@
 
     </div>
 </body>
+
 </html>
