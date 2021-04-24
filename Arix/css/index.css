@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background-color: #666;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+td {
+  border: 1px solid #fff;
+  width: 25px;
+  height: 25px;
+}
+
+.c1 {
+  background: red;
+}
+
+.c2 {
+  background: blueviolet;
+}
+
+.c3 {
+  background: brown;
+}
+
+.c4 {
+  background: cyan;
+}
+
+.c5 {
+  background: darkmagenta;
+}
+
+.c6 {
+  background: goldenrod;
+}
+
+.c7 {
+  background: hotpink;
+}
