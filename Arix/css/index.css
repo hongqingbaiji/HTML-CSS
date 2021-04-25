@@ -9,12 +9,20 @@ html {
 
 body {
   overflow: hidden;
-  background-color: #666;
+  background-color: skyblue;
+}
+
+h3 {
+  width: 100%;
+  float: left;
+  margin-left: 100px;
 }
 
 table {
   border-collapse: collapse;
   margin: 20px auto;
+  float: left;
+  margin-left: 100px;
 }
 
 td {
@@ -24,29 +32,9 @@ td {
 }
 
 .c1 {
-  background: red;
+  background: #666;
 }
 
 .c2 {
-  background: blueviolet;
-}
-
-.c3 {
-  background: brown;
-}
-
-.c4 {
-  background: cyan;
-}
-
-.c5 {
-  background: darkmagenta;
-}
-
-.c6 {
-  background: goldenrod;
-}
-
-.c7 {
-  background: hotpink;
+  background: slateblue;
 }
