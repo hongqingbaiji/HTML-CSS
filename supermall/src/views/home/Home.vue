@@ -7,6 +7,8 @@
     <home-recommend-view :recommends="recommends"></home-recommend-view>
     <home-feature-view></home-feature-view>
     <tab-control class="tab-control" :titles="['流行','新款','精选']"></tab-control>
+    <goods-list :goods="goods['pop'].list"></goods-list>
+
     <div class="abc">123</div>
   </div>
 </template>
@@ -14,6 +16,7 @@
 <script>
 import NavBar from 'components/common/navbar/NavBar';
 import TabControl from 'components/content/tabControl/TabControl';
+import GoodsList from 'components/content/goods/GoodsList';
 
 import HomeSwiper from './childComps/HomeSwiper';
 import HomeRecommendView from './childComps/HomeRecommendView';
@@ -28,7 +31,8 @@ export default {
     HomeSwiper,
     HomeRecommendView,
     HomeFeatureView,
-    TabControl
+    TabControl,
+    GoodsList
   },
   data(){
     return{
@@ -36,23 +40,34 @@ export default {
       recommends:[],
       goods:{
         'pop':{page: 0, list:[]},
-        'news':{page: 0, list:[]},
+        'new':{page: 0, list:[]},
         'sell':{page: 0, list:[]},
       }
     }
   },
   created(){
     // 1.请求多个数据
-    getHomeMultidata().then(res=>{
-      // console.log(res.data.banner.list);
-      this.banners = res.data.banner.list;
-      this.recommends = res.data.recommend.list;
-    }) 
+    this.getHomeMultidata();
 
     //2.请求商品数据
-    getHomeGoods('pop',1).then(res=>{
-      console.log(res);
-    })
+    this.getHomeGoods('pop');
+    this.getHomeGoods('new');
+    this.getHomeGoods('sell');
+  },
+  methods:{
+    getHomeMultidata(){
+      getHomeMultidata().then(res=>{
+        this.banners = res.data.banner.list;
+        this.recommends = res.data.recommend.list;
+      }) 
+    },
+    getHomeGoods(type){
+      const page = this.goods[type].page + 1;
+      getHomeGoods(type,page).then(res=>{
+        this.goods[type].list.push(...res.data.list);
+        this.goods[type].page += 1;
+      })
+    }
   }
 }
 </script>
@@ -73,13 +88,17 @@ export default {
 .home-banners{
   margin-top: 44px;
 }
+
+.tab-control{
+  position: sticky;
+  top:44px;
+  z-index: 9;
+  margin-bottom: 5px;
+}
+
+
 .abc{
   height: 1000px;
   background-color: #ccc;
 }
-.tab-control{
-  position: sticky;
-  top:44px;
-}
-
 </style>
