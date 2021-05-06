@@ -3,7 +3,7 @@
     <nav-bar class="home-nav">
       <div slot="center">购物街</div>
     </nav-bar>
-    <home-swiper :banners="banners"></home-swiper>
+    <home-swiper :banners="banners" class="home-banners"></home-swiper>
     <home-recommend-view :recommends="recommends"></home-recommend-view>
     <home-feature-view></home-feature-view>
     <tab-control class="tab-control" :titles="['流行','新款','精选']"></tab-control>
@@ -19,7 +19,7 @@ import HomeSwiper from './childComps/HomeSwiper';
 import HomeRecommendView from './childComps/HomeRecommendView';
 import HomeFeatureView from './childComps/HomeFeatureView';
 
-import {getHomeMultidata} from 'network/home';
+import {getHomeMultidata,getHomeGoods} from 'network/home';
 
 export default {
   name:'Home',
@@ -33,7 +33,12 @@ export default {
   data(){
     return{
       banners:[],
-      recommends:[]
+      recommends:[],
+      goods:{
+        'pop':{page: 0, list:[]},
+        'news':{page: 0, list:[]},
+        'sell':{page: 0, list:[]},
+      }
     }
   },
   created(){
@@ -43,14 +48,19 @@ export default {
       this.banners = res.data.banner.list;
       this.recommends = res.data.recommend.list;
     }) 
+
+    //2.请求商品数据
+    getHomeGoods('pop',1).then(res=>{
+      console.log(res);
+    })
   }
 }
 </script>
 
 <style>
-#home{
+/* #home{
   padding-top:44px;
-}
+} */
 .home-nav{
   background-color: var(--color-tint);
   color: #fff;
@@ -59,6 +69,9 @@ export default {
   right: 0;
   top: 0;
   z-index: 9;
+}
+.home-banners{
+  margin-top: 44px;
 }
 .abc{
   height: 1000px;
