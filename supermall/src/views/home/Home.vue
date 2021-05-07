@@ -31,6 +31,7 @@ import HomeRecommendView from './childComps/HomeRecommendView';
 import HomeFeatureView from './childComps/HomeFeatureView';
 
 import {getHomeMultidata,getHomeGoods} from 'network/home';
+import {debounce} from 'common/utils';
 
 export default {
   name:'Home',
@@ -67,6 +68,14 @@ export default {
     this.getHomeGoods('pop');
     this.getHomeGoods('new');
     this.getHomeGoods('sell');
+
+  },
+  mounted(){
+    // 3. 监听item中图片加载完成
+    const refresh = debounce(this.$refs.scroll.refresh, 200);
+    this.$bus.$on('itemImageLoad',()=>{
+      refresh();
+    });
   },
 
   methods:{
@@ -109,9 +118,9 @@ export default {
       getHomeGoods(type,page).then(res=>{
         this.goods[type].list.push(...res.data.list);
         this.goods[type].page += 1;
-        setTimeout(()=>{
-          this.$refs.scroll.finishPullUp();
-        },3000);
+
+        // 完成上拉加载更多
+        this.$refs.scroll.finishPullUp();
       })
     }
   },
