@@ -48,8 +48,9 @@ export default {
     border-bottom:5px solid #f2f5f8;
   }
   .info-title{
-    font-size: 14px;
+    font-size: 16px;
     color:#222;
+    line-height: 22px;
   }
   .info-price{
     margin: 15px 0 20px;
@@ -59,13 +60,13 @@ export default {
     font-size:22px;
   }
   .o-price{
-    font-size: 12px;
+    font-size: 14px;
     text-decoration: line-through;
     padding:0 5px;
   }
   .discount{
     background-color: var(--color-high-text);
-    font-size: 12px;
+    font-size: 14px;
     padding:2px 5px;
     color:#fff;
     border-radius: 10px;
@@ -95,7 +96,7 @@ export default {
     margin-right: 2px;
   }
   .info-service-item span{
-    font-size: 12px;
+    font-size: 13px;
     color:#333;
   }
 
