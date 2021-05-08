@@ -1,17 +1,23 @@
 <template>
   <div id="home">
     <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
-
+    <tab-control class="tab-control" 
+                   :titles="['流行','新款','精选']" 
+                   @tabClick="tabClick"
+                   ref="tabControl1" 
+                   v-show="isShowTabControl"></tab-control>
     <scroll class="content" 
             ref="scroll" 
             :probe-type="3" 
             @scroll="contentScroll"
             :pull-up-load="true"
             @pullingUp="loadMore">
-      <home-swiper :banners="banners" class="home-banners"></home-swiper>
+      <home-swiper :banners="banners" class="home-banners" @swiperImageLoad="swiperImageLoad"></home-swiper>
       <home-recommend-view :recommends="recommends"></home-recommend-view>
       <home-feature-view></home-feature-view>
-      <tab-control class="tab-control" :titles="['流行','新款','精选']" @tabClick="tabClick"></tab-control>
+      <tab-control :titles="['流行','新款','精选']" 
+                   @tabClick="tabClick"
+                   ref="tabControl2"></tab-control>
       <goods-list :goods="showGoods"></goods-list>
     </scroll>
     <!-- .native 监听组件的原生事件 -->
@@ -56,10 +62,21 @@ export default {
         'sell':{page: 0, list:[]},
       },
       currentType:'pop',
-      isShowBackTop:false
+      isShowBackTop:false,
+      tabOffsetTop:0,
+      isShowTabControl:false,
+
     }
   },
   // 声明周期
+  activated(){
+    this.$refs.scroll.refresh();
+    this.$refs.scroll.scrollTo(0,this.saveY,0);
+  },
+
+  deactivated(){
+    this.saveY = this.$refs.scroll.getScrollY();
+  },
   created(){
     // 1.请求多个数据
     this.getHomeMultidata();
@@ -68,8 +85,8 @@ export default {
     this.getHomeGoods('pop');
     this.getHomeGoods('new');
     this.getHomeGoods('sell');
-
   },
+
   mounted(){
     // 3. 监听item中图片加载完成
     const refresh = debounce(this.$refs.scroll.refresh, 200);
@@ -92,18 +109,28 @@ export default {
           this.currentType = 'sell';
           break
       }
+      this.$refs.tabControl1.currentIndex = index;
+      this.$refs.tabControl2.currentIndex = index;
     },
     backClick(){
-      this.$refs.scroll.scrollTo(0,0,800);
+      this.$refs.scroll.scrollTo(0,0,500);
     },
     contentScroll(position){
-      // console.log(position);
-      this.isShowBackTop = (-position.y) > 500;
+      // 判断backTop是否显示
+      this.isShowBackTop = (-position.y) > 800;
+      // 判断tabControl是否吸顶
+      this.isShowTabControl = (-position.y) > this.tabOffsetTop;
+
     },
     loadMore(){
       this.getHomeGoods(this.currentType);
       // 重新计算高度，防止下拉图片显示不全bug
       this.$refs.scroll.refresh();
+    },
+    swiperImageLoad(){
+      // 获取tabControl 的 offsetTop
+      // 所有组件都有一个属性$el，用于获取组件中的元素
+      this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop;
     },
 
     // 网络请求的方法
@@ -142,24 +169,21 @@ export default {
 .home-nav{
   background-color: var(--color-tint);
   color: #fff;
+  /*之前 使用的是浏览器原生的滚动，是网页全局的滚动，现在使用了better-scroll,不需要固定定位了
   position:fixed;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 9;
-}
-.home-banners{
-  margin-top: 44px;
+  z-index: 9; */
 }
 
-/* .tab-control{
-  position: sticky;
-  top:44px;
-  z-index: 9;
-  margin-bottom: 5px;
-} */
+.tab-control{
+  position: relative;
+  z-index:9;
+}
+
 .content{
-  /* 动态计算高度 */
+  /* 第一种方法：动态计算高度 */
   /* margin-top:44px;
   height: calc( 100% - 93px ); */
 

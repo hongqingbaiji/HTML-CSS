@@ -57,13 +57,17 @@ export default {
   methods:{
     scrollTo(x,y,time=500){
       // 先判断是否有this.scroll,防止图片没加载完导致报错
-      this.scroll && this.scroll.scrollTo(x,y,time);
+      // x*1,y*1 代表把x,y的值转换成数值类型，解决BScroll传值报错问题
+      this.scroll && this.scroll.scrollTo(x*1,y*1,time);
     },
     finishPullUp(){
       this.scroll && this.scroll.finishPullUp();
     },
     refresh(){
       this.scroll && this.scroll.refresh();
+    },
+    getScrollY(){
+      return this.scroll ? this.scroll.y : 0;
     }
   }
 }
