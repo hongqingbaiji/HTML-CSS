@@ -63,8 +63,7 @@ td{
 .param-info-value{
   color:red;
 }
-.abc{
-  height:1000px;
-  background-color: #ddd;
+.param-image img{
+  width:100%;
 }
 </style>
