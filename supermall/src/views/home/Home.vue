@@ -37,7 +37,7 @@ import HomeRecommendView from './childComps/HomeRecommendView';
 import HomeFeatureView from './childComps/HomeFeatureView';
 
 import {getHomeMultidata,getHomeGoods} from 'network/home';
-import {debounce} from 'common/utils';
+import {itemListenerMixin} from 'common/mixin';
 
 export default {
   name:'Home',
@@ -51,7 +51,7 @@ export default {
     Scroll,
     BackTop
   },
-  
+  mixins:[itemListenerMixin],
   data(){
     return{
       banners:[],
@@ -65,7 +65,7 @@ export default {
       isShowBackTop:false,
       tabOffsetTop:0,
       isShowTabControl:false,
-
+      saveY:0,
     }
   },
   // 声明周期
@@ -75,7 +75,10 @@ export default {
   },
 
   deactivated(){
+    //当离开首页时， 1.先保存一下Y值
     this.saveY = this.$refs.scroll.getScrollY();
+    // 2.取消全局事件的监听
+    this.$bus.$off('itemImgLoad',this.itemImgListener);
   },
   created(){
     // 1.请求多个数据
@@ -88,11 +91,14 @@ export default {
   },
 
   mounted(){
-    // 3. 监听item中图片加载完成
-    const refresh = debounce(this.$refs.scroll.refresh, 200);
-    this.$bus.$on('itemImageLoad',()=>{
-      refresh();
-    });
+    // 使用混入后就不需要这些东西了
+    // // 3. 监听item中图片加载完成
+    // const refresh = debounce(this.$refs.scroll.refresh, 200);
+    // // 对监听的事件进行保存
+    // this.itemImgListener = ()=>{
+    //   refresh();
+    // };
+    // this.$bus.$on('itemImageLoad',this.itemImgListener);
   },
 
   methods:{
@@ -116,6 +122,7 @@ export default {
       this.$refs.scroll.scrollTo(0,0,500);
     },
     contentScroll(position){
+      // console.log(position);
       // 判断backTop是否显示
       this.isShowBackTop = (-position.y) > 800;
       // 判断tabControl是否吸顶
