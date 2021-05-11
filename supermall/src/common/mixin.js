@@ -1,5 +1,6 @@
 // 混入  两个组件中有重复代码，就可以使用混入
 import { debounce } from 'common/utils';
+import BackTop from 'components/content/backTop/BackTop';
 
 export const itemListenerMixin = {
   data() {
@@ -15,5 +16,21 @@ export const itemListenerMixin = {
       this.refresh()
     }
     this.$bus.$on('itemImgLoad', this.itemImgListener);
+  }
+}
+
+export const backTopMixin = {
+  data() {
+    return {
+      isShowBackTop: false,
+    }
+  },
+  components: {
+    BackTop,
+  },
+  methods: {
+    backClick() {
+      this.$refs.scroll.scrollTo(0, 0, 300);
+    }
   }
 }

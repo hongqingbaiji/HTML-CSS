@@ -10,8 +10,10 @@
       <detail-goods-info :detail-info="detailInfo" @imageLoad="imageLoad"></detail-goods-info>
       <detail-goods-param ref="params" :goods-param="goodsParam"></detail-goods-param>
       <detail-comment-info ref="comment" :comment-info="commentInfo"></detail-comment-info>
-      <goods-list ref="recommend" :goods="recommends"></goods-list>
+      <goods-list ref="recommend" :goods="recommends" class="recommend"></goods-list>
     </scroll>
+    <detail-bottom-bar></detail-bottom-bar>
+    <back-top @click.native="backClick" v-show="isShowBackTop"></back-top>
   </div>
 </template>
 
@@ -23,17 +25,18 @@ import DetailShopInfo from './childComps/DetailShopInfo';
 import DetailGoodsInfo from './childComps/DetailGoodsInfo';
 import DetailGoodsParam from './childComps/DetailGoodsParam';
 import DetailCommentInfo from './childComps/DetailCommentInfo';
+import DetailBottomBar from './childComps/DetailBottomBar';
 
 import GoodsList from 'components/content/goods/GoodsList';
 import Scroll from 'components/common/scroll/Scroll';
 
 import { debounce } from 'common/utils';
 import {getDetail,Goods,Shop,GoodsParam,getRecommend} from 'network/detail';
-import {itemListenerMixin} from 'common/mixin';
+import {itemListenerMixin,backTopMixin} from 'common/mixin';
 
 export default {
   name: 'Detail',
-  mixins:[itemListenerMixin],
+  mixins:[itemListenerMixin,backTopMixin],
   components: {
     DetailNavBar,
     DetailSwiper,
@@ -42,6 +45,7 @@ export default {
     DetailGoodsInfo,
     DetailGoodsParam,
     DetailCommentInfo,
+    DetailBottomBar,
 
     Scroll,
     GoodsList
@@ -101,7 +105,8 @@ export default {
       this.themeTopYs.push(this.$refs.params.$el.offsetTop);
       this.themeTopYs.push(this.$refs.comment.$el.offsetTop);
       this.themeTopYs.push(this.$refs.recommend.$el.offsetTop);
-      console.log(this.themeTopYs);
+      this.themeTopYs.push(Number.MAX_VALUE);// 最大值
+      // console.log(this.themeTopYs);
     },100);
 
   },
@@ -122,13 +127,22 @@ export default {
     },
     contentScroll(position){
       // console.log(position);
+      // 判断backTop是否显示
+      this.isShowBackTop = (-position.y) > 800;
       // 获取y值
       const positionY = -position.y;
       // 将positionY 和主题中值进行对比
       let length = this.themeTopYs.length;
-      for(let i = 0; i < length;i++){
-        if(this.currentIndex !== i && ((i < length-1 && positionY >= this.themeTopYs[i] && positionY < this.themeTopYs[i+1]) || 
-            (i === length-1 && positionY >= this.themeTopYs[i]))){
+      for(let i = 0; i < length-1;i++){
+        // 普通做法
+        // if(this.currentIndex !== i && ((i < length-1 && positionY >= this.themeTopYs[i] && positionY < this.themeTopYs[i+1]) || 
+        //     (i === length-1 && positionY >= this.themeTopYs[i]))){
+        //   this.currentIndex = i;
+        //   this.$refs.nav.currentIndex = this.currentIndex;
+        // }
+
+        // Hack方法，数组里多加一个最大值，循环里面加上 length-1，少循环一个值，这样就不需要考虑 i+1会溢出了
+        if(this.currentIndex !== i && (positionY >= this.themeTopYs[i] && positionY < this.themeTopYs[i+1])){
           this.currentIndex = i;
           this.$refs.nav.currentIndex = this.currentIndex;
         }
@@ -148,12 +162,14 @@ export default {
 .content{
   position:absolute;
   top:44px;
-  bottom:49px;
+  bottom:58px;
   left:0;
   right:0;
   overflow:hidden;
   background-color: #fff;
 }
-
+.recommend{
+  border-bottom: 5px solid #fff;
+}
 
 </style>
