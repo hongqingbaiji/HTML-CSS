@@ -58,13 +58,13 @@ export default {
     }
 
   },
-  computed:{
-    prices(){
-      return this.info.reduce((total, p)=>{
-        return total + p.price * p.count;
-      },0);
-    }
-  }
+  // computed:{
+  //   prices(){
+  //     return this.info.reduce((total, p)=>{
+  //       return total + p.price * p.count;
+  //     },0);
+  //   }
+  // }
 }
 </script>
 
