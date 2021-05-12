@@ -12,7 +12,7 @@
       <detail-comment-info ref="comment" :comment-info="commentInfo"></detail-comment-info>
       <goods-list ref="recommend" :goods="recommends" class="recommend"></goods-list>
     </scroll>
-    <detail-bottom-bar></detail-bottom-bar>
+    <detail-bottom-bar @addToCart="addToCart"></detail-bottom-bar>
     <back-top @click.native="backClick" v-show="isShowBackTop"></back-top>
   </div>
 </template>
@@ -147,6 +147,23 @@ export default {
           this.$refs.nav.currentIndex = this.currentIndex;
         }
       }
+    },
+    // 添加到购物车
+    addToCart(){
+      // 1.先获取购物车需要展示的信息
+      const product = {};
+      product.image = this.topImages[0],
+      product.title = this.goods.title;
+      product.desc = this.goods.desc;
+      product.price = this.goods.realPrice;
+      product.iid = this.iid;
+
+      // 2. 将商品信息添加到购物车里展示
+      // 这是使用mutations时的添加方法
+      // this.$store.commit('addCart',product);
+      
+      // 这是使用actions时添加方法
+      this.$store.dispatch('addToCart',product);
     }
   }
 }
