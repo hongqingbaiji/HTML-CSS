@@ -29,7 +29,6 @@ export default {
   },
   methods:{
     checkAllClick(){
-      console.log(123);
       if(this.isSelectAll){
         this.$store.getters.cartList.forEach(item => item.checked = false)
       }else {
@@ -68,7 +67,7 @@ export default {
     left:0;
     right:0;
     height:40px;
-    background-color: #ddd;
+    background-color: #e1e2e3;
     line-height: 40px;
     font-size: 14px;
     justify-content: space-between;

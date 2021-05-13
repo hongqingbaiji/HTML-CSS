@@ -14,6 +14,7 @@
     </scroll>
     <detail-bottom-bar @addToCart="addToCart"></detail-bottom-bar>
     <back-top @click.native="backClick" v-show="isShowBackTop"></back-top>
+    <toast message="已添加至购物车"></toast>
   </div>
 </template>
 
@@ -29,10 +30,12 @@ import DetailBottomBar from './childComps/DetailBottomBar';
 
 import GoodsList from 'components/content/goods/GoodsList';
 import Scroll from 'components/common/scroll/Scroll';
+import Toast from 'components/common/toast/Toast';
 
 import { debounce } from 'common/utils';
 import {getDetail,Goods,Shop,GoodsParam,getRecommend} from 'network/detail';
 import {itemListenerMixin,backTopMixin} from 'common/mixin';
+// import { mapActions } from 'vuex';
 
 export default {
   name: 'Detail',
@@ -46,6 +49,7 @@ export default {
     DetailGoodsParam,
     DetailCommentInfo,
     DetailBottomBar,
+    Toast,
 
     Scroll,
     GoodsList
@@ -117,6 +121,7 @@ export default {
     this.$bus.$off('itemImgLoad',this.itemImgListener);
   },
   methods:{
+    // ...mapActions(['addToCart']),
     imageLoad(){
       // this.$refs.scroll.refresh();
       this.refresh();
@@ -163,7 +168,12 @@ export default {
       // this.$store.commit('addCart',product);
       
       // 这是使用actions时添加方法
-      this.$store.dispatch('addToCart',product);
+      this.$store.dispatch('addToCart',product).then(res => {
+        console.log(res);
+      });
+      // this.addToCart(product).then(res => {
+      //   console.log(res);
+      // })
     }
   }
 }
