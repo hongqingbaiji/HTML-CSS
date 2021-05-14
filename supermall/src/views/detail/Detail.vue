@@ -14,7 +14,7 @@
     </scroll>
     <detail-bottom-bar @addToCart="addToCart"></detail-bottom-bar>
     <back-top @click.native="backClick" v-show="isShowBackTop"></back-top>
-    <toast message="已添加至购物车"></toast>
+    <!-- <toast :message="message" :isShow="isShow"></toast> -->
   </div>
 </template>
 
@@ -30,7 +30,7 @@ import DetailBottomBar from './childComps/DetailBottomBar';
 
 import GoodsList from 'components/content/goods/GoodsList';
 import Scroll from 'components/common/scroll/Scroll';
-import Toast from 'components/common/toast/Toast';
+// import Toast from 'components/common/toast/Toast';
 
 import { debounce } from 'common/utils';
 import {getDetail,Goods,Shop,GoodsParam,getRecommend} from 'network/detail';
@@ -49,10 +49,11 @@ export default {
     DetailGoodsParam,
     DetailCommentInfo,
     DetailBottomBar,
-    Toast,
+    // Toast,
 
     Scroll,
-    GoodsList
+    GoodsList,
+
   },
   data() {
     return {
@@ -66,7 +67,10 @@ export default {
       recommends:[],
       themeTopYs:[],
       getThemeTopY:null,
-      currentIndex:0
+      currentIndex:0,
+
+      // message:'',
+      // isShow:false
     }
   },
   created(){
@@ -169,7 +173,14 @@ export default {
       
       // 这是使用actions时添加方法
       this.$store.dispatch('addToCart',product).then(res => {
-        console.log(res);
+        // this.isShow=true;
+        // this.message = res;
+
+        // setTimeout(()=>{
+        //   this.isShow = false;
+        //   this.message = '';
+        // },2000)
+        this.$toast.show(res,2000);
       });
       // this.addToCart(product).then(res => {
       //   console.log(res);
