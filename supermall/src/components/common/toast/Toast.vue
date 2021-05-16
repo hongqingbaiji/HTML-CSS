@@ -49,5 +49,6 @@ export default {
     padding:8px 10px;
     transform: translate(-50%,-50%);
     border-radius: 8px;
+    z-index: 999;
   }
 </style>

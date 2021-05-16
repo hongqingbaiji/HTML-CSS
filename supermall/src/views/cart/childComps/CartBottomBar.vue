@@ -7,7 +7,7 @@
       <span>全选</span>
     </div>
     <div class="price">合计:{{totalPrice}}</div>
-    <div class="calculate">去计算({{checkLength}})</div>
+    <div class="calculate" @click="calcClick">去计算({{checkLength}})</div>
   </div>
 </template>
 
@@ -33,6 +33,11 @@ export default {
         this.$store.getters.cartList.forEach(item => item.checked = false)
       }else {
         this.$store.getters.cartList.forEach(item => item.checked = true)
+      }
+    },
+    calcClick(){
+      if(!this.isSelectAll){
+        this.$toast.show('请选择要购买的商品',2000);
       }
     }
   },

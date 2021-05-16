@@ -180,7 +180,9 @@ export default {
         //   this.isShow = false;
         //   this.message = '';
         // },2000)
-        this.$toast.show(res,2000);
+        // console.log(this.$toast);
+        this.$toast.show(res, 2000);
+
       });
       // this.addToCart(product).then(res => {
       //   console.log(res);
