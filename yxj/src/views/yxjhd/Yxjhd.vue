@@ -1,7 +1,9 @@
 <template>
   <div id="yxjhd">
     <div class="topImg">
-      <div class="barrage" :notice="notice">厨神【巴拉巴拉小魔仙】制作了元宵</div>
+      <div class="barrage" :notice="notice" 
+           v-for="(item,index) in notice" 
+           v-show="showBarrage" >{{ item }}</div>
     </div>
   </div>
 </template>
@@ -15,8 +17,17 @@ export default {
   data() {
     return {
       activeUser:[],
-      notice:[],
+      notice:['厨神【巴拉巴拉小魔仙】制作了元宵',
+      '厨神【阿娜古丽克】制作了元宵',
+      '厨神【撒旦法仍】制作了元宵',
+      '厨神【火荣贵热女生】制作了元宵',
+      '厨神【今天很热】制作了元宵',
+      '厨神【无法答复你】制作了元宵',
+      '厨神【本人接待日】制作了元宵'],
+      showBarrage:true,
+      currentIndex:0
     }
+
   },
   created(){
     // 请求数据
