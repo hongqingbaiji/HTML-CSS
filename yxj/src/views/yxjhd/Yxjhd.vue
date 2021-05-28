@@ -2,30 +2,26 @@
   <div id="yxjhd">
     <div class="topImg">
       <div class="barrage" :notice="notice" 
-           v-for="(item,index) in notice" 
-           v-show="showBarrage" >{{ item }}</div>
+           v-for="(item,index) in notice" :key="index">{{ item }}</div>
     </div>
+    <mark></mark>
   </div>
 </template>
 
 <script>
+import Mark from './childComps/Mark';
+
 import { getActiveUser } from 'network/yxjhd'
 
 export default {
   name: 'Yxjhd',
-  components: {},
+  components: {
+    Mark
+  },
   data() {
     return {
       activeUser:[],
-      notice:['厨神【巴拉巴拉小魔仙】制作了元宵',
-      '厨神【阿娜古丽克】制作了元宵',
-      '厨神【撒旦法仍】制作了元宵',
-      '厨神【火荣贵热女生】制作了元宵',
-      '厨神【今天很热】制作了元宵',
-      '厨神【无法答复你】制作了元宵',
-      '厨神【本人接待日】制作了元宵'],
-      showBarrage:true,
-      currentIndex:0
+      notice:['厨神【巴拉巴拉小魔仙】制作了元宵']
     }
 
   },
