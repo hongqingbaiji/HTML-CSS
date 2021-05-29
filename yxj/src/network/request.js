@@ -3,7 +3,7 @@ import axios from 'axios';
 export function request(config) {
   // 1.创建axios的实例
   const instance = axios.create({
-    baseURL: 'https://admin.66rpg.com',
+    baseURL: 'http://admin.66rpg.com',
     timeout: 5000
   });
 

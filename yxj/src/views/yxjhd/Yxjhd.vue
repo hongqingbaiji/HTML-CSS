@@ -1,33 +1,34 @@
 <template>
   <div id="yxjhd">
-    <div class="topImg">
-      <div class="barrage" :notice="notice" 
-           v-for="(item,index) in notice" :key="index">{{ item }}</div>
-    </div>
-    <mark></mark>
+    <top-img></top-img>
+    <marking :activeState="activeState"></marking>
   </div>
 </template>
 
 <script>
-import Mark from './childComps/Mark';
+import TopImg from './childComps/TopImg'
+import Marking from './childComps/Marking';
 
-import { getActiveUser } from 'network/yxjhd'
+// import { getActiveUser } from 'network/yxjhd'
 
 export default {
   name: 'Yxjhd',
   components: {
-    Mark
+    TopImg,
+    Marking,
+    
   },
   data() {
     return {
       activeUser:[],
-      notice:['厨神【巴拉巴拉小魔仙】制作了元宵']
+      notice:[],
+      activeState: 1
     }
 
   },
   created(){
     // 请求数据
-    this.getActiveUser();
+    // this.getActiveUser();
   },
   methods:{
     getActiveUser(){
@@ -48,20 +49,4 @@ export default {
     background-color: #58309B;
     text-align: center;
   }
-  .topImg{
-    position: relative;
-    width: 100%;
-    height: 959px;
-    background: url('~@/assets/img/top.png') center no-repeat;
-  }
-  .topImg .barrage{
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    height: 30px;
-    line-height: 30px;
-    width: 400px;
-    margin-left:-200px;
-  }
-
 </style>
