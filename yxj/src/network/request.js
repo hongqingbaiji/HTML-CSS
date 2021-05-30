@@ -2,10 +2,7 @@ import axios from 'axios';
 
 export function request(config) {
   // 1.创建axios的实例
-  const instance = axios.create({
-    baseURL: 'http://admin.66rpg.com',
-    timeout: 5000
-  });
+  const instance = axios.create({});
 
   // 2.axios的拦截器
   instance.interceptors.request.use(config => {

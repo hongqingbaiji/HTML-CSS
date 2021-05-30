@@ -14,18 +14,14 @@ module.exports = {
       .set('views', resolve('./src/views'))
   },
   devServer: {
-    port: '8080',
-    host: '192.168.26.142',
+    port: '8082',
+    // host: 'dev.admin.66rpg.com',
     open: true,
     proxy: {
       '/ajax': { //业务类的接口请求地址，这里的api可以是后端的工程名
         changeOrigin: true,
         target: 'http://admin.66rpg.com',
       },
-      // '/': { //websoket请求接口地址
-      //   ws: true,
-      //   target: 'ws://localhost:8080/'
-      // }
     }
   }
 }
