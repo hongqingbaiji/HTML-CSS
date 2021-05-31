@@ -1,6 +1,6 @@
 <template>
   <div class="head-pendant">
-    <h3>头像挂件奖励</h3>
+    <h4>头像挂件奖励</h4>
     <p>PK获胜方获得30天挂件奖励；落败一方获得7天挂件奖励；阵营票数相同，各获得20天挂件奖励
 奖励将在活动结束的3个工作日内发放！</p>
     <div class="guajian">
@@ -28,7 +28,7 @@ export default {
     background-size: 100%;
     margin: 0 auto;
   }
-  .head-pendant h3{
+  .head-pendant h4{
     padding-top: 15px;
   }
   .head-pendant p{

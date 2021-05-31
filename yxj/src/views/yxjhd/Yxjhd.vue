@@ -5,6 +5,7 @@
     <pk></pk>
     <rank-list></rank-list>
     <head-pendant></head-pendant>
+    <create-cum :award-list="awardList"></create-cum>
   </div>
 </template>
 
@@ -14,8 +15,9 @@ import Marking from './childComps/Marking';
 import Pk from './childComps/Pk';
 import RankList from './childComps/RankList';
 import HeadPendant from './childComps/HeadPendant';
+import CreateCum from './childComps/CreateCum'
 
-import { getActiveUser } from 'network/yxjhd'
+import { getActiveUser,getAwardList } from 'network/yxjhd'
 
 export default {
   name: 'Yxjhd',
@@ -24,19 +26,26 @@ export default {
     Marking,
     Pk,
     RankList,
-    HeadPendant
+    HeadPendant,
+    CreateCum
   },
   data() {
     return {
       activeUser:[],
       notice:[],
-      activeState: 1
+      activeState: 1,
+      awardList:[]
     }
 
   },
   created(){
     // 请求数据
     // this.getActiveUser();
+
+    //获取累计制作奖励列表接口
+    getAwardList().then(res => {
+      this.awardList = res.data;
+    })
   },
   methods:{
     getActiveUser(){
@@ -44,7 +53,7 @@ export default {
         this.activeUser = res.data.active_user;
         this.notice = res.data.notice;
       }) 
-    },
+    }
   }
 }
 </script>
