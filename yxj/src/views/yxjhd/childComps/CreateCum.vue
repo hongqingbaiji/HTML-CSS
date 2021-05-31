@@ -62,11 +62,12 @@ export default {
 .cum{
   display: flex;
   justify-content: space-between;
-  padding:10px 130px; 
+  padding:2px 130px; 
+  line-height: 68px;
 }
 .cum-left img{
   width: 51px;
-  margin-right: 15px;
+  margin-right: 20px;
   vertical-align: middle;
 }
 
@@ -90,5 +91,30 @@ export default {
 .btnstate2{
   background: url('~@/assets/img/createcum/btnstate2.png') no-repeat;
   background-size: 100%;
+}
+
+.cum-right span{
+  margin-right:20px;
+}
+.cum:last-child{
+  position: relative;
+  padding: 10px 30px;
+  height: 100px;
+  margin: 20px 100px;
+}
+
+.cum:last-child::after{
+  content: "奖励将于6月6日 20:00 开启兑换";
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 14px;
+  color: rgb(244,222,255);
+  text-align: center;
+  line-height: 29px;
+  width:100%;
+  height: 105px;
+  background: url('~@/assets/img/createcum/cumbgc.png') center center /100% no-repeat;
 }
 </style>
