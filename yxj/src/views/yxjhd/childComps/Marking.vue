@@ -1,29 +1,52 @@
 <template>
-  <div class="marking">
+<div>
+  <div class="marking" v-if="activeState==1">
     <div class="desk">
-      <div class="activeMsg" v-if="activeState==0">活动未开始</div>
-      <div class="activity" v-else-if="activeState==1">
-        <div class="dough">x5</div>
+      <div class="activity">
+        <div class="dough">x{{pasteNum}}</div>
         <div v-if="!isActive" class="startmark" @mouseover="mouseOver"></div>
-        <div v-else class="startmarking" @mouseleave="mouseLeave"></div>
-        <div class="camp">更换阵容</div>
+        <div v-else class="startmarking" 
+             @mouseleave="mouseLeave"
+             @click="markClick"
+             ></div>
+        <div class="camp">更换阵营</div>
       </div>
-      <div class="activeMsg" v-else>活动已结束</div>
     </div>
-
   </div>
+  <div class="marking1" v-else>
+    <div class="desk">
+      <div class="activeMsg" v-show="activeState==0">活动未开始</div>
+      <div class="activeMsg" v-show="activeState==2">活动已结束</div>
+    </div>
+  </div>
+  <!-- <popup :message="message" :isShow="isShow"></popup> -->
+</div>
+  
 </template>
 
 <script>
+
+// import Popup from 'components/popup/Popup';
+
 export default {
   name: 'Marking',
   props:{
-    activeState:Number
+      status:Number,
+      activeState: Number,
+      isChangeTeam:Number,
+      team:Number,
+      pasteNum:Number
+  },
+  components:{
+    // Popup
   },
   data() {
     return {
-      msg:'hello',
-      isActive:false
+      isActive:false,
+      pasteNum1:this.pasteNum,
+
+      // message:'',
+      // isShow:false
     }
   },
   methods:{
@@ -32,17 +55,39 @@ export default {
     },
     mouseLeave(){
       this.isActive = false;
+    },
+    markClick(){
+      // 先判断是否登录
+      if(this.status === -1000){
+        alert('你没有登录');
+      }else{
+        // 判断是否加入了阵营
+        if(this.team === 0){
+          this.$popup.dispatch('markClick').then(res => {
+            this.$popup.show(res);
+          })
+        }
+        this.pasteNum1 = this.pasteNum;
+        this.pasteNum1 -= 5;
+        this.$emit('pasteNumChange',this.pasteNum1);
+      }
+
     }
   }
 }
 </script>
 
 <style scoped>
-.marking{
+.marking,.marking1{
   width: 100%;
-  height: 370px;
   padding-bottom: 5px;
   background-color: #6842a5;
+}
+.marking{
+  height: 370px;
+}
+.marking1{
+  height: 225px;
 }
 
 .desk{
@@ -80,6 +125,7 @@ export default {
   color:#AB6D20;
   font-size: 25px;
   padding-top: 20px;
+  font-weight: 700;
 }
 
 .dough {
