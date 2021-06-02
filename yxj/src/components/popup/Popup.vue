@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="popup1" v-show="ispopup1" >
+  <div class="popup1">
     <p>选择制作汤圆/元宵，默认加入该阵营过程中可切换一次阵营</p>
     <div class="selectImg">
       <img class="yxicon" src="~@/assets/img/popup/yxd.png" @click="img1Click">
@@ -10,6 +10,7 @@
     <img class="istyd" v-show="istyd" src="~@/assets/img/popup/select.png">
     <div v-if="isdisabled" class="disable"></div>
     <div v-else class="able" @click="ablebtnclick"></div>
+    <div class="close1" @click="close1Click"></div>
   </div>
 
 </div>
@@ -47,7 +48,7 @@ export default {
     },
     ablebtnclick(){
       this.ispopup1 = false;
-      this. isChangeTeam2 = 1;
+      this.isChangeTeam2 = 1;
       if(this.isyxd){
         this.team2 = 2;
       }else{
@@ -56,6 +57,10 @@ export default {
       this.$emit('popupChange',this.ispopup1);
       this.$emit('teamChange',this.team2);
       this.$emit('changeTeam',this.isChangeTeam2);
+    },
+    close1Click(){
+      this.ispopup1 = false;
+      this.$emit('popupChange',this.ispopup1);
     }
   }
 }
@@ -113,5 +118,15 @@ export default {
 }
 .istyd{
   right: 60px;
+}
+.close1{
+  position: absolute;
+  right: 20px;
+  top: -40px;
+  width: 30px;
+  height: 88px;
+  cursor: pointer;
+  background: url('~@/assets/img/popup/close1.png') center center /100% no-repeat;
+  z-index:-1
 }
 </style>

@@ -19,7 +19,7 @@
       <div class="activeMsg" v-show="activeState==2">活动已结束</div>
     </div>
   </div>
-  <popup class="popup" v-show="isClick" 
+  <popup class="popup" v-show="isClick && team1==0"
          :team1="team1"
          :is-change-team1="isChangeTeam1"
          @popupChange="popupChange"
@@ -27,6 +27,12 @@
          @changeTeam="changeTeam"
          >
   </popup>
+  <div class="yxdpop" v-show="team1==2 && isyxdpop">
+    <div class="close2" @click="yxdpopclick"></div>
+  </div>
+  <div class="tydpop" v-show="team1==1 && istydpop">
+    <div class="close2" @click="tydpopclick"></div>
+  </div>
 </div>
   
 </template>
@@ -53,7 +59,9 @@ export default {
       pasteNum1:this.pasteNum,
       isClick:false,
       team1:this.team,
-      isChangeTeam1:this.isChangeTeam
+      isChangeTeam1:this.isChangeTeam,
+      istydpop:false,
+      isyxdpop:false
     }
   },
   methods:{
@@ -72,6 +80,12 @@ export default {
         if(this.team1 === 0){
           this.isClick = true;
         }
+        if(this.team1 === 1){
+          this.istydpop = true;
+        }
+        if(this.team1 ===2){
+          this.isyxdpop = true;
+        }
 
         this.pasteNum1 = this.pasteNum;
         this.pasteNum1 -= 5;
@@ -81,15 +95,22 @@ export default {
     },
     popupChange(e1){
       this.isClick = e1;
-      console.log(this.isClick);
+      // console.log(this.isClick);
     },
     teamChange(e2){
       this.team1 = e2;
-      console.log(this.team1);
+      this.$emit('teamchange',this.team1)
+      // console.log(this.team1);
     },
     changeTeam(e3){
       this.isChangeTeam1 = e3;
-      console.log(this.isChangeTeam1);
+      // console.log(this.isChangeTeam1);
+    },
+    yxdpopclick(){
+      this.isyxdpop = false;
+    },
+    tydpopclick(){
+      this.istydpop = false;
     }
   }
 }
@@ -181,8 +202,33 @@ export default {
 }
 .popup {
   position: absolute;
-  bottom: 0%;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%,20%);
+  z-index: 10;
 }
+.yxdpop,.tydpop{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-55%,30%);
+  width: 359px;
+  height: 315px;
+}
+.close2{
+  position: absolute;
+  top: 40px;
+  right: 70px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url('~@/assets/img/popup/close2.png') center center /100% no-repeat;
+}
+.yxdpop{
+  background: url('~@/assets/img/popup/yxsuccess.png') center center /100% no-repeat;
+}
+.tydpop{
+  background: url('~@/assets/img/popup/tysuccess.png') center center /100% no-repeat;
+}
+
 </style>
