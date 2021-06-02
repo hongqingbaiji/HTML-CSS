@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="showPopup">
   <div class="marking" v-if="activeState==1">
     <div class="desk">
       <div class="activity">
@@ -19,14 +19,21 @@
       <div class="activeMsg" v-show="activeState==2">活动已结束</div>
     </div>
   </div>
-  <!-- <popup :message="message" :isShow="isShow"></popup> -->
+  <popup class="popup" v-show="isClick" 
+         :team1="team1"
+         :is-change-team1="isChangeTeam1"
+         @popupChange="popupChange"
+         @teamChange="teamChange"
+         @changeTeam="changeTeam"
+         >
+  </popup>
 </div>
   
 </template>
 
 <script>
 
-// import Popup from 'components/popup/Popup';
+import Popup from 'components/popup/Popup';
 
 export default {
   name: 'Marking',
@@ -38,15 +45,15 @@ export default {
       pasteNum:Number
   },
   components:{
-    // Popup
+    Popup
   },
   data() {
     return {
       isActive:false,
       pasteNum1:this.pasteNum,
-
-      // message:'',
-      // isShow:false
+      isClick:false,
+      team1:this.team,
+      isChangeTeam1:this.isChangeTeam
     }
   },
   methods:{
@@ -62,16 +69,27 @@ export default {
         alert('你没有登录');
       }else{
         // 判断是否加入了阵营
-        if(this.team === 0){
-          this.$popup.dispatch('markClick').then(res => {
-            this.$popup.show(res);
-          })
+        if(this.team1 === 0){
+          this.isClick = true;
         }
+
         this.pasteNum1 = this.pasteNum;
         this.pasteNum1 -= 5;
         this.$emit('pasteNumChange',this.pasteNum1);
       }
 
+    },
+    popupChange(e1){
+      this.isClick = e1;
+      console.log(this.isClick);
+    },
+    teamChange(e2){
+      this.team1 = e2;
+      console.log(this.team1);
+    },
+    changeTeam(e3){
+      this.isChangeTeam1 = e3;
+      console.log(this.isChangeTeam1);
     }
   }
 }
@@ -156,5 +174,15 @@ export default {
   background: url('~@/assets/img/camp.png');
   background-size: 100% 100%;
   text-align: center;
+}
+
+.showPopup{
+  position:relative;
+}
+.popup {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%,20%);
 }
 </style>
