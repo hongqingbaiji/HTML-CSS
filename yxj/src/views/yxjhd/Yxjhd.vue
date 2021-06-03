@@ -5,8 +5,9 @@
              :is-change-team="isChangeTeam"
              :team="team"
              :paste-num="pasteNum"
+             @teamchange="teamchange"
              @pasteNumChange="pasteNumChange"></marking>
-    <pk></pk>
+    <pk :team1-count="team1Count" :team2-count="team2Count" :team="team"></pk>
     <rank-list></rank-list>
     <head-pendant></head-pendant>
     <create-cum :award-list="awardList"></create-cum>
@@ -53,6 +54,10 @@ export default {
       team:0,
       pasteNum:0,
 
+      // pk
+      team1Count:0,
+      team2Count:0,
+
       // CreateCum
       awardList:[]
     }
@@ -90,7 +95,7 @@ export default {
         "msg":"\u4e0d\u5728\u6d3b\u52a8\u65f6\u95f4\u5185\uff01",
         "data":{
           "active_user": {       //活动用户信息
-          "paste_num":100,       //面团数量
+          "paste_num":50,       //面团数量
           "team":0,              //队伍 0未选择队伍 1汤圆队 2元宵队
           "is_changed_team":0    //是否已经更改过阵营
           },
@@ -136,8 +141,9 @@ export default {
           "count":457305
         }]
       };
-      this.teamType = res.data.team_type;
-
+      // this.teamType = res.data.team_type;
+      this.team2Count = res.data[0].count;
+      this.team1Count = res.data[1].count;
     });
 
     // 领取累计制作奖励接口
@@ -148,7 +154,11 @@ export default {
   methods:{
     pasteNumChange(value){
       this.pasteNum = parseFloat(value);
-    }
+    },
+    teamchange(e){
+      this.team = e;
+      console.log(this.team);
+    } 
   }
 }
 </script>
