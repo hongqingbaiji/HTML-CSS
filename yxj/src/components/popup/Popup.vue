@@ -22,7 +22,6 @@ export default {
   name: 'Popup',
   props:{
     team1:Number,
-    isChangeTeam1:Number
   },
   components: {},
   data() {
@@ -31,8 +30,7 @@ export default {
       isdisabled:true,
       isyxd:false,
       istyd:false,
-      team2:this.team1,
-      isChangeTeam2:this.isChangeTeam1
+      team2:this.team1
     }
   },
   methods:{
@@ -48,7 +46,6 @@ export default {
     },
     ablebtnclick(){
       this.ispopup1 = false;
-      this.isChangeTeam2 = 1;
       if(this.isyxd){
         this.team2 = 2;
       }else{
@@ -56,7 +53,6 @@ export default {
       }
       this.$emit('popupChange',this.ispopup1);
       this.$emit('teamChange',this.team2);
-      this.$emit('changeTeam',this.isChangeTeam2);
     },
     close1Click(){
       this.ispopup1 = false;

@@ -9,7 +9,7 @@
              @mouseleave="mouseLeave"
              @click="markClick"
              ></div>
-        <div class="camp">更换阵营</div>
+        <div class="camp" @click="campClick">更换阵营</div>
       </div>
     </div>
   </div>
@@ -21,10 +21,8 @@
   </div>
   <popup class="popup" v-show="isClick && team1==0"
          :team1="team1"
-         :is-change-team1="isChangeTeam1"
          @popupChange="popupChange"
          @teamChange="teamChange"
-         @changeTeam="changeTeam"
          >
   </popup>
   <div class="yxdpop" v-show="team1==2 && isyxdpop">
@@ -33,6 +31,12 @@
   <div class="tydpop" v-show="team1==1 && istydpop">
     <div class="close2" @click="tydpopclick"></div>
   </div>
+
+  <camp v-show="isCamp && isChangeTeam==0 " 
+        :team1="team1" :isChangeTeam1="isChangeTeam1"
+        @isCampChange="isCampChange"
+        @ChangeTeam1="ChangeTeam1"
+        @teamChange="teamChange"></camp>
 </div>
   
 </template>
@@ -40,6 +44,7 @@
 <script>
 
 import Popup from 'components/popup/Popup';
+import Camp from 'components/popup/Camp';
 
 export default {
   name: 'Marking',
@@ -51,7 +56,8 @@ export default {
       pasteNum:Number
   },
   components:{
-    Popup
+    Popup,
+    Camp
   },
   data() {
     return {
@@ -59,9 +65,10 @@ export default {
       pasteNum1:this.pasteNum,
       isClick:false,
       team1:this.team,
-      isChangeTeam1:this.isChangeTeam,
       istydpop:false,
-      isyxdpop:false
+      isyxdpop:false,
+      isCamp:false,
+      isChangeTeam1:this.isChangeTeam
     }
   },
   methods:{
@@ -95,31 +102,35 @@ export default {
     },
     popupChange(e1){
       this.isClick = e1;
-
-    // },
-    // teamChange(e2){
-    //   this.team1 = e2;
-    // },
-    // changeTeam(e3){
-    //   this.isChangeTeam1 = e3;
-
-      // console.log(this.isClick);
     },
     teamChange(e2){
       this.team1 = e2;
       this.$emit('teamchange',this.team1)
       // console.log(this.team1);
     },
-    changeTeam(e3){
-      this.isChangeTeam1 = e3;
-      // console.log(this.isChangeTeam1);
-    },
     yxdpopclick(){
       this.isyxdpop = false;
     },
     tydpopclick(){
       this.istydpop = false;
+    },
+
+    campClick(){
+      this.isCamp = true;
+    },
+    isCampChange(e1){
+      this.isCamp = e1;
+      console.log(this.isCamp);
+    },
+    ChangeTeam1(e2){
+      this.isChangeTeam1 = e2;
+      console.log(this.isChangeTeam1);
+    },
+    teamChange(e3){
+      this.team1 = e3;
+      console.log(this.team1);
     }
+
   }
 }
 </script>
