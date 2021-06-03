@@ -6,7 +6,12 @@
              :team="team"
              :paste-num="pasteNum"
              @teamchange="teamchange"
-             @pasteNumChange="pasteNumChange"></marking>
+             @pasteNumChange="pasteNumChange"
+             :team1-count="team1Count"
+             :team2-count="team2Count"
+             @teamCount1="teamCount1" 
+             @teamCount2="teamCount2"
+             ></marking>
     <pk :team1-count="team1Count" :team2-count="team2Count" :team="team"></pk>
     <rank-list></rank-list>
     <head-pendant></head-pendant>
@@ -157,7 +162,15 @@ export default {
     },
     teamchange(e){
       this.team = e;
-      console.log(this.team);
+      console.log('team:'+this.team);
+    },
+    teamCount1(e1){
+      this.team1Count = e1;
+      console.log('t1c:'+this.team1Count);
+    },
+    teamCount2(e2){
+      this.team2Count = e2;
+      console.log('t2c:'+this.team2Count);
     } 
   }
 }

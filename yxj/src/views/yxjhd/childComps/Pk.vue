@@ -36,6 +36,8 @@ export default {
   },
   methods:{
     yxdWidth(yxdNum,tydNum){
+      this.yxdNum = this.team2Count;
+      this.tydNum = this.team1Count;
       const total = this.yxdNum +this.tydNum;
       const percentage = (this.yxdNum / total)*100;
       return percentage

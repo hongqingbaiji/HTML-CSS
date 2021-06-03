@@ -36,7 +36,7 @@
         :team1="team1" :isChangeTeam1="isChangeTeam1"
         @isCampChange="isCampChange"
         @ChangeTeam1="ChangeTeam1"
-        @teamChange="teamChange"></camp>
+        @teamChange1="teamChange1"></camp>
 </div>
   
 </template>
@@ -53,7 +53,9 @@ export default {
       activeState: Number,
       isChangeTeam:Number,
       team:Number,
-      pasteNum:Number
+      pasteNum:Number,
+      team1Count:Number,
+      team2Count:Number
   },
   components:{
     Popup,
@@ -68,7 +70,9 @@ export default {
       istydpop:false,
       isyxdpop:false,
       isCamp:false,
-      isChangeTeam1:this.isChangeTeam
+      isChangeTeam1:this.isChangeTeam,
+      team1Count1:this.team1Count,
+      team2Count1:this.team2Count,
     }
   },
   methods:{
@@ -86,14 +90,23 @@ export default {
         // 判断是否加入了阵营
         if(this.team1 === 0){
           this.isClick = true;
+          this.isyxdpop = false;
+          this.istydpop = false;
         }
+        this.team1Count1 = this.team1Count;
+        this.team2Count1 = this.team2Count;
         if(this.team1 === 1){
+          this.isyxdpop = false;
           this.istydpop = true;
+          this.team1Count1++;
+          this.$emit('teamCount1',this.team1Count1);
         }
         if(this.team1 ===2){
+          this.istydpop = false;
           this.isyxdpop = true;
+          this.team2Count1++;
+          this.$emit('teamCount2',this.team2Count1);
         }
-
         this.pasteNum1 = this.pasteNum;
         this.pasteNum1 -= 5;
         this.$emit('pasteNumChange',this.pasteNum1);
@@ -105,8 +118,7 @@ export default {
     },
     teamChange(e2){
       this.team1 = e2;
-      this.$emit('teamchange',this.team1)
-      // console.log(this.team1);
+      this.$emit('teamchange',this.team1);
     },
     yxdpopclick(){
       this.isyxdpop = false;
@@ -116,19 +128,22 @@ export default {
     },
 
     campClick(){
-      this.isCamp = true;
+      if(this.team1 != 0){
+        this.isCamp = true;
+      }
+     
     },
-    isCampChange(e1){
-      this.isCamp = e1;
+    isCampChange(e3){
+      this.isCamp = e3;
       console.log(this.isCamp);
     },
-    ChangeTeam1(e2){
-      this.isChangeTeam1 = e2;
-      console.log(this.isChangeTeam1);
+    ChangeTeam1(e4){
+      this.isChangeTeam1 = e4;
     },
-    teamChange(e3){
-      this.team1 = e3;
-      console.log(this.team1);
+    teamChange1(e5){
+      this.team1 = e5;
+      this.$emit('teamchange',this.team1);
+      console.log('team1:'+this.team1);
     }
 
   }

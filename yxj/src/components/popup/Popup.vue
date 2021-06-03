@@ -56,7 +56,12 @@ export default {
     },
     close1Click(){
       this.ispopup1 = false;
+      this.isyxd = false;
+      this.istyd = false;
+      this.isdisabled = true;
+      this.team2 = 0;
       this.$emit('popupChange',this.ispopup1);
+      this.$emit('teamChange',this.team2);
     }
   }
 }

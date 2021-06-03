@@ -57,16 +57,16 @@ export default {
     },
     submitClick(){
       this.isCamp1 = false;
+      this.team2 = this.team1;
       this.$emit('isCampChange',this.isCamp1);
       this.isChangeTeam2 = 1;
       this.$emit('ChangeTeam1',this.isChangeTeam2);
       if(this.team2 == 1){
-        this.team2 == 2;
+        this.team2 = 2;
       }else{
-        this.team2 == 1;
+        this.team2 = 1
       }
-      this.$emit('teamChange',this.team2);
-
+      this.$emit('teamChange1',this.team2);
     }
   }
 }
