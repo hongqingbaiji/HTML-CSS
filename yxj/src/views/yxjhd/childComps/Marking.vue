@@ -81,15 +81,12 @@ export default {
     },
     popupChange(e1){
       this.isClick = e1;
-      console.log(this.isClick);
     },
     teamChange(e2){
       this.team1 = e2;
-      console.log(this.team1);
     },
     changeTeam(e3){
       this.isChangeTeam1 = e3;
-      console.log(this.isChangeTeam1);
     }
   }
 }

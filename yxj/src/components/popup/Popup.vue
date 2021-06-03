@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="popup1" v-show="ispopup1" >
+  <div class="popup1" v-show="ispopup1"  >
     <p>选择制作汤圆/元宵，默认加入该阵营过程中可切换一次阵营</p>
     <div class="selectImg">
       <img class="yxicon" src="~@/assets/img/popup/yxd.png" @click="img1Click">
