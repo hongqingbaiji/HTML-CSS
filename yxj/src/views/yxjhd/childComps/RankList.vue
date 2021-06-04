@@ -6,36 +6,36 @@
         <div class="top2">
           <div class="topInfo">
             <div class="uhead">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team2FirstFive[1].avatar">
             </div>
-            <span class="uname">巴拉巴拉小魔仙</span>
+          <span class="uname">{{team2FirstFive[1].username}}</span>
           </div>
           <div class="yxbox">
-            <span>56</span>
+            <span>{{team2FirstFive[1].dumpling_num}}</span>
             <span class="yxicon"></span>
           </div>
         </div>
         <div class="top1">
           <div class="topInfo">
             <div class="uhead">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team2FirstFive[0].avatar">
             </div>
-            <span class="uname">巴拉巴拉小魔仙</span>
+            <span class="uname">{{team2FirstFive[0].username}}</span>
           </div>
           <div class="yxbox">
-            <span>56</span>
+            <span>{{team2FirstFive[0].dumpling_num}}</span>
             <span class="yxicon"></span>
           </div>
         </div>
         <div class="top3">
           <div class="topInfo">
             <div class="uhead">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team2FirstFive[2].avatar">
             </div>
-            <span class="uname">巴拉巴拉小魔仙</span>
+            <span class="uname">{{team2FirstFive[2].username}}</span>
           </div>
           <div class="yxbox">
-            <span>56</span>
+            <span>{{team2FirstFive[2].dumpling_num}}</span>
             <span class="yxicon"></span>
           </div>
         </div>
@@ -45,12 +45,12 @@
           <div>
             <span class="topNum4_5">4</span>
             <span class="uhead4_5">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team2FirstFive[3].avatar">
             </span>
-            <span class="uname4_5">巴拉巴拉小魔仙</span>
+            <span class="uname4_5">{{team2FirstFive[3].username}}</span>
           </div>
           <div>
-            <span class="totalNum">56</span>
+            <span class="totalNum">{{team2FirstFive[3].dumpling_num}}</span>
             <span class="yxicon"></span>
           </div>
         </div> 
@@ -58,12 +58,12 @@
           <div>
             <span class="topNum4_5">5</span>
             <span class="uhead4_5">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team2FirstFive[4].avatar">
             </span>
-            <span class="uname4_5">巴拉巴拉小魔仙</span>
+            <span class="uname4_5">{{team2FirstFive[4].username}}</span>
           </div>
           <div>
-            <span class="totalNum">56</span>
+            <span class="totalNum">{{team2FirstFive[4].dumpling_num}}</span>
             <span class="yxicon"></span>
           </div>
         </div>
@@ -76,36 +76,36 @@
         <div class="top2">
           <div class="topInfo">
             <div class="uhead">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team1FirstFive[1].avatar">
             </div>
-            <span class="uname">巴拉巴拉小魔仙</span>
+            <span class="uname">{{team1FirstFive[1].username}}</span>
           </div>
           <div class="yxbox">
-            <span>56</span>
+            <span>{{team1FirstFive[1].dumpling_num}}</span>
             <span class="tyicon"></span>
           </div>
         </div>
         <div class="top1">
           <div class="topInfo">
             <div class="uhead">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team1FirstFive[0].avatar">
             </div>
-            <span class="uname">巴拉巴拉小魔仙</span>
+            <span class="uname">{{team1FirstFive[0].username}}</span>
           </div>
           <div class="yxbox">
-            <span>56</span>
+            <span>{{team1FirstFive[0].dumpling_num}}</span>
             <span class="tyicon"></span>
           </div>
         </div>
         <div class="top3">
           <div class="topInfo">
             <div class="uhead">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team1FirstFive[2].avatar">
             </div>
-            <span class="uname">巴拉巴拉小魔仙</span>
+            <span class="uname">{{team1FirstFive[2].username}}</span>
           </div>
           <div class="yxbox">
-            <span>56</span>
+            <span>{{team1FirstFive[2].dumpling_num}}</span>
             <span class="tyicon"></span>
           </div>
         </div>
@@ -115,12 +115,12 @@
           <div>
             <span class="topNum4_5">4</span>
             <span class="uhead4_5">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team1FirstFive[3].avatar">
             </span>
-            <span class="uname4_5">巴拉巴拉小魔仙</span>
+            <span class="uname4_5">{{team1FirstFive[3].username}}</span>
           </div>
           <div>
-            <span class="totalNum">56</span>
+            <span class="totalNum">{{team1FirstFive[3].dumpling_num}}</span>
             <span class="tyicon"></span>
           </div>
         </div> 
@@ -128,18 +128,17 @@
           <div>
             <span class="topNum4_5">5</span>
             <span class="uhead4_5">
-              <img src="~@/assets/img/ranklist/head.jpg">
+              <img :src="team1FirstFive[4].avatar">
             </span>
-            <span class="uname4_5">巴拉巴拉小魔仙</span>
+            <span class="uname4_5">{{team1FirstFive[4].username}}</span>
           </div>
           <div>
-            <span class="totalNum">56</span>
+            <span class="totalNum">{{team1FirstFive[4].dumpling_num}}</span>
             <span class="tyicon"></span>
           </div>
         </div>
       </div>
       <p>贡献榜前五名（并列以时间先后为准）将会分别获得月花篮1个，奖励将在活动结束的3个工作日内发放！</p>
-
     </div>
   </div>
 </template>
@@ -148,6 +147,25 @@
 
 export default {
   name:'RankList',
+  props:{
+    team1FirstFive:{
+      type:Array,
+      default(){
+        return []
+      }
+    },
+    team2FirstFive:{
+      type:Array,
+      default(){
+        return []
+      }
+    }
+  },
+  data(){
+    return {
+      avatar:''
+    }
+  }
 }
 </script>
 

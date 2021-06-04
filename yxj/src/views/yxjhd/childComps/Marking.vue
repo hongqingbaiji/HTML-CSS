@@ -2,6 +2,13 @@
 <div class="showPopup">
   <div class="marking" v-if="activeState==1">
     <div class="desk">
+      <div class="side">
+        <div class="daily"></div>
+        <div class="me"></div>
+        <div class="rule">
+          <a href="http://www.66rpg.com/monthly/t_21/1cHgMcAq3558.shtml" target="_blank"></a>
+        </div>
+      </div>
       <div class="activity">
         <div class="dough">x{{pasteNum}}</div>
         <div v-if="!isActive" class="startmark" @mouseover="mouseOver"></div>
@@ -95,23 +102,27 @@ export default {
         }
         this.team1Count1 = this.team1Count;
         this.team2Count1 = this.team2Count;
-        if(this.team1 === 1){
-          this.isyxdpop = false;
-          this.istydpop = true;
-          this.team1Count1++;
-          this.$emit('teamCount1',this.team1Count1);
-        }
-        if(this.team1 ===2){
-          this.istydpop = false;
-          this.isyxdpop = true;
-          this.team2Count1++;
-          this.$emit('teamCount2',this.team2Count1);
-        }
-        this.pasteNum1 = this.pasteNum;
-        this.pasteNum1 -= 5;
-        this.$emit('pasteNumChange',this.pasteNum1);
-      }
 
+        this.pasteNum1 = this.pasteNum;
+        if(this.pasteNum1 >= 5){
+          if(this.team1 === 1){
+            this.isyxdpop = false;
+            this.istydpop = true;
+            this.team1Count1++;
+            this.$emit('teamCount1',this.team1Count1);
+          }
+          if(this.team1 ===2){
+            this.istydpop = false;
+            this.isyxdpop = true;
+            this.team2Count1++;
+            this.$emit('teamCount2',this.team2Count1);
+          }
+          this.pasteNum1 -= 5;
+          this.$emit('pasteNumChange',this.pasteNum1);
+        }else{
+          alert('面团用完了哦~');
+        }        
+      }
     },
     popupChange(e1){
       this.isClick = e1;
@@ -172,6 +183,40 @@ export default {
   background-size: 100%;
 }
 
+/* side 开始*/
+.side{
+  position:absolute;
+  right: -150px;
+  top: 100px;
+  cursor: pointer;
+}
+.daily{
+  width: 82px;
+  height: 120px;
+  background: url('~@/assets/img/side/daily.png') center center /100% no-repeat;
+}
+.me{
+  position:absolute;
+  top:95px;
+  left: 20px;
+  width: 67px;
+  height: 108px;
+  background: url('~@/assets/img/side/me.png') center center /100% no-repeat;
+}
+.rule{
+  position:absolute;
+  top:180px;
+  left: 10px;
+  width: 75px;
+  height: 124px;
+  background: url('~@/assets/img/side/rule.png') center center /100% no-repeat;
+}
+.rule a{
+  display: inline-block;
+  width: 75px;
+  height: 124px;
+}
+/* side 结束*/
 .activeMsg {
   position:absolute;
   bottom:25px;

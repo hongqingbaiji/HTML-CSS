@@ -13,7 +13,7 @@
              @teamCount2="teamCount2"
              ></marking>
     <pk :team1-count="team1Count" :team2-count="team2Count" :team="team"></pk>
-    <rank-list></rank-list>
+    <rank-list :team1FirstFive="team1FirstFive" :team2FirstFive="team2FirstFive"></rank-list>
     <head-pendant></head-pendant>
     <create-cum :award-list="awardList"></create-cum>
   </div>
@@ -62,6 +62,11 @@ export default {
       // pk
       team1Count:0,
       team2Count:0,
+
+      //RankList
+      team1FirstFive:[],
+      team2FirstFive:[],
+      avatar:'',
 
       // CreateCum
       awardList:[]
@@ -140,15 +145,81 @@ export default {
         "status":1,
         "data":[{
           "team_type":2,
-          "count":64070
+          "count":64070,
+           "first_five":[
+                {
+                    "uid":95441500,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=95441500",
+                    "username":"\u2605\u5954\u5954\u2605"
+                },
+                {
+                    "uid":84184494,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=84184494",
+                    "username":"\u590f\u7720fitting"
+                },
+                {
+                    "uid":18633391,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=18633391",
+                    "username":"\u767e\u91cc.\u4e5d\u5f26"
+                },
+                {
+                    "uid":37177537,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=37177537",
+                    "username":"tatillonne"
+                },
+                {
+                    "uid":86521273,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=86521273",
+                    "username":"si\u7396\u5b50\u9e2d"
+                }
+            ]
         },{
-          team_type:1,
-          "count":457305
+          "team_type":1,
+          "count":457305,
+          "first_five":[
+                {
+                    "uid":21467303,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=21467303",
+                    "username":"\u7389\u5e37"
+                },
+                {
+                    "uid":21880268,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=21880268",
+                    "username":"kitsch-V"
+                },
+                {
+                    "uid":4231288,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=4231288",
+                    "username":"\u6e29\u90c1\u6e05"
+                },
+                {
+                    "uid":88376334,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=88376334",
+                    "username":"\u6a31\u5c9b\u60a0\u5948"
+                },
+                {
+                    "uid":83337296,
+                    "dumpling_num":56,
+                    "avatar":"http:\/\/passport.66rpg.com\/user\/avatar?uid=83337296",
+                    "username":"\u559c\u9a6c\u62c9\u96c5\u6ca1\u6709\u7cd6~"
+                }
+            ]
         }]
       };
       // this.teamType = res.data.team_type;
       this.team2Count = res.data[0].count;
       this.team1Count = res.data[1].count;
+      this.team1FirstFive = res.data[0].first_five;
+      this.team2FirstFive = res.data[1].first_five;
     });
 
     // 领取累计制作奖励接口
