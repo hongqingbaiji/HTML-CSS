@@ -3,7 +3,7 @@
   <div class="marking" v-if="activeState==1">
     <div class="desk">
       <div class="side">
-        <div class="daily"></div>
+        <div class="daily" @click="dailyClick"></div>
         <div class="me"></div>
         <div class="rule">
           <a href="http://www.66rpg.com/monthly/t_21/1cHgMcAq3558.shtml" target="_blank"></a>
@@ -44,14 +44,15 @@
         @isCampChange="isCampChange"
         @ChangeTeam1="ChangeTeam1"
         @teamChange1="teamChange1"></camp>
+  <daily :daily="daily" v-show="isDaily" @dailyChange="dailyChange"></daily>
 </div>
-  
 </template>
 
 <script>
 
 import Popup from 'components/popup/Popup';
 import Camp from 'components/popup/Camp';
+import Daily from 'components/popup/Daily';
 
 export default {
   name: 'Marking',
@@ -62,11 +63,18 @@ export default {
       team:Number,
       pasteNum:Number,
       team1Count:Number,
-      team2Count:Number
+      team2Count:Number,
+      daily:{
+        type:Array,
+        default(){
+          return []
+        }
+      }
   },
   components:{
     Popup,
-    Camp
+    Camp,
+    Daily
   },
   data() {
     return {
@@ -80,6 +88,8 @@ export default {
       isChangeTeam1:this.isChangeTeam,
       team1Count1:this.team1Count,
       team2Count1:this.team2Count,
+      daily1:this.daily,
+      isDaily:false,
     }
   },
   methods:{
@@ -155,6 +165,14 @@ export default {
       this.team1 = e5;
       this.$emit('teamchange',this.team1);
       console.log('team1:'+this.team1);
+    },
+    //每日任务弹窗
+    dailyClick(){
+      this.isDaily = true;
+    },
+    dailyChange(e6){  
+      this.isDaily1 = e6;
+      this.isDaily = this.isDaily1;
     }
 
   }
@@ -217,6 +235,7 @@ export default {
   height: 124px;
 }
 /* side 结束*/
+
 .activeMsg {
   position:absolute;
   bottom:25px;

@@ -11,6 +11,7 @@
              :team2-count="team2Count"
              @teamCount1="teamCount1" 
              @teamCount2="teamCount2"
+             :daily="daily"
              ></marking>
     <pk :team1-count="team1Count" :team2-count="team2Count" :team="team"></pk>
     <rank-list :team1FirstFive="team1FirstFive" :team2FirstFive="team2FirstFive"></rank-list>
@@ -25,7 +26,8 @@ import Marking from './childComps/Marking';
 import Pk from './childComps/Pk';
 import RankList from './childComps/RankList';
 import HeadPendant from './childComps/HeadPendant';
-import CreateCum from './childComps/CreateCum'
+import CreateCum from './childComps/CreateCum';
+
 import { 
   getMakeDumpling,
   getUserRecord,
@@ -46,7 +48,7 @@ export default {
     Pk,
     RankList,
     HeadPendant,
-    CreateCum
+    CreateCum,
   },
   data() {
     return {
@@ -58,6 +60,7 @@ export default {
       isChangeTeam:0,
       team:0,
       pasteNum:0,
+      daily:[],
 
       // pk
       team1Count:0,
@@ -66,7 +69,6 @@ export default {
       //RankList
       team1FirstFive:[],
       team2FirstFive:[],
-      avatar:'',
 
       // CreateCum
       awardList:[]
@@ -95,7 +97,9 @@ export default {
 
     // 每日任务列表接口
     getDailyTask().then(res => {
-      // console.log(res);
+      this.daily = res.data;
+      console.log(this.daily);
+
     });
 
     // 活动用户信息接口
@@ -255,5 +259,6 @@ export default {
     background-color: #58309B;
     text-align: center;
   }
+
 </style>
 

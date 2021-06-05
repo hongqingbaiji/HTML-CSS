@@ -151,19 +151,20 @@ export default {
     team1FirstFive:{
       type:Array,
       default(){
-        return []
+        return [{}]
       }
     },
     team2FirstFive:{
       type:Array,
       default(){
-        return []
+        return [{}]
       }
     }
   },
   data(){
     return {
-      avatar:''
+      team1FirstFive2:this.team1FirstFive,
+      team2FirstFive2:this.team2FirstFive
     }
   }
 }
