@@ -10,6 +10,11 @@ import './assets/font/iconfont.css';
 import FastClick from 'fastclick';
 FastClick.attach(document.body);
 
+// 引入swiper组件
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/swiper-bundle.css';
+Vue.use(VueAwesomeSwiper);
+
 Vue.config.productionTip = false;
 
 new Vue({
