@@ -56,18 +56,18 @@
 </script>
 
 <style scoped>
-  /* .header-swiper{
+  .header-swiper{
     width: 100%;
     height: 2rem;
-  } */
+  }
   /* 优化样式，防止图片加载慢导致下方的内容出现掉块现象 */
-  .header-swiper{
+  /* .header-swiper{
     background: #ccc;
     height: 0;
     padding-bottom: 26.67%;
     /* 为什么是26.67% ？ 
     因为宽是375px，100%是375，高需要100px的话,计算后就是26.67% */
-  }
+  /* } */ 
   .header-swiper img{
     width: 100%;
     height: 2rem;
