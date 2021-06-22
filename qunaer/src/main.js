@@ -12,7 +12,7 @@ FastClick.attach(document.body);
 
 // 引入swiper组件
 import VueAwesomeSwiper from 'vue-awesome-swiper';
-import 'swiper/swiper-bundle.css';
+import 'swiper/dist/css/swiper.css';
 Vue.use(VueAwesomeSwiper);
 
 Vue.config.productionTip = false;

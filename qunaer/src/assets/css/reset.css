@@ -69,6 +69,11 @@ td {
   background: transparent;
 }
 
+* {
+  /* 优化移动端web界面滚动性能 （解决快速滚动swiper报错问题）*/
+  touch-action: pan-y;
+}
+
 body {
   line-height: 1;
 }
