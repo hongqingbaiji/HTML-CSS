@@ -1,9 +1,7 @@
 <template>
   <div class="home">
-    <home-header></home-header>
-    <home-swiper></home-swiper>
-    <home-icon></home-icon>
-    <home-location></home-location>
+
+ -->
     <home-hot></home-hot>
     123
   </div>
