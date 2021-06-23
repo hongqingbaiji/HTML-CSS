@@ -1,9 +1,12 @@
 <template>
   <div class="home">
 
- -->
+    <home-header></home-header>
+    <home-swiper></home-swiper>
+    <home-icon></home-icon>
+    <home-location></home-location>
     <home-hot></home-hot>
-    123
+    <div class="abc"></div>
   </div>
 </template>
 
@@ -34,5 +37,9 @@ export default {
 <style scoped>
 .home{
   background-color: #f5f5f5;
+  width: 100%;
+}
+.abc{
+  height: 3000px;
 }
 </style>

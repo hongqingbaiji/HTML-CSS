@@ -21,10 +21,16 @@
 </template>
 
 <script>
+
 export default {
   name: 'Hot',
   data() {
     return {
+      swiperOptions: {
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },  
+      },
       hotList:[{
         id:'01',
         imgUrl:require('@/assets/image/hot/hot1.jpg'),
@@ -108,18 +114,17 @@ export default {
   padding-top:.1rem;
   color:#616161;
 }
+
 .hot-list{
-  font-size: .24rem;
   overflow-x: scroll;
   white-space: nowrap;
-  display: -webkit-box;
+  font-size: .24rem;
   padding: 0 .1rem;
-
 }
 .hot-item{
   display: inline-block;
   text-align: center;
-  padding:.06rem .1rem .2rem;
+  padding: .06rem .1rem .3rem;
   width: 2rem;
 }
 .hot-item img{
