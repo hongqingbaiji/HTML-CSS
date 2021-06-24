@@ -7,13 +7,9 @@
           <p>{{page.text}}</p>
         </div>
       </swiper-slide>
-
       <!-- 小圆点 -->
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
-
-
-
   </div>
 </template>
 
@@ -24,55 +20,12 @@ export default {
   data() {
     return {
       swiperOptions: {
-          pagination: {
-            el: '.swiper-pagination',
-            //如果小圆点没有显示，那需要把swiper插件的版本降低一些
-          },
-          loop:true //开启循环播放
+        pagination: {
+          el: '.swiper-pagination',
+          //如果小圆点没有显示，那需要把swiper插件的版本降低一些
         },
-      iconList:[{
-        id:'01',
-        imgUrl: require('@/assets/image/icon/icon1.png'),
-        text:'故宫'
-      },{
-        id:'02',
-        imgUrl:require('@/assets/image/icon/icon2.png'),
-        text:'八达岭长城真的很长哦'
-      },{
-        id:'03',
-        imgUrl:require('@/assets/image/icon/icon3.png'),
-        text:'文化古迹'
-      },{
-        id:'04',
-        imgUrl:require('@/assets/image/icon/icon4.png'),
-        text:'天坛公园'
-      },{
-        id:'05',
-        imgUrl: require('@/assets/image/icon/icon1.png'),
-        text:'故宫'
-      },{
-        id:'06',
-        imgUrl:require('@/assets/image/icon/icon2.png'),
-        text:'八达岭长城'
-      },{
-        id:'07',
-        imgUrl:require('@/assets/image/icon/icon3.png'),
-        text:'文化古迹'
-      },{
-        id:'08',
-        imgUrl:require('@/assets/image/icon/icon4.png'),
-        text:'天坛公园'
-      },{
-        id:'09',
-        imgUrl:require('@/assets/image/icon/icon3.png'),
-        text:'文化古迹'
-      },{
-        id:'10',
-        imgUrl:require('@/assets/image/icon/icon4.png'),
-        text:'天坛公园'
-      }
-
-      ]
+        loop:true //开启循环播放
+      },
     }
   },
   computed: {
@@ -92,7 +45,8 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '~@/assets/css/common.styl';
+  @import '~@/assets/css/common.styl';
+
   .icons{
     width: 100%;
     background-color: #fff;
@@ -114,7 +68,8 @@ export default {
   .icon-item p{
     font-size: .28rem;
     color:#212121;
-    whiteSpace();
+    whiteSpaces();
+
   }
 
 
