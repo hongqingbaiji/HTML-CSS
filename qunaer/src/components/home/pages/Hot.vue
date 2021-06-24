@@ -62,7 +62,7 @@ export default {
       },{
         id:'06',
         imgUrl:require('@/assets/image/hot/hot1.jpg'),
-        title:'北京野生动物园',
+        title:'北京野生动物园大熊猫馆',
         price:145
       },{
         id:'07',
@@ -97,14 +97,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
+@import '~@/assets/css/common.styl';
+
 .hot{
   width: 100%;
+  background-color #fff;
 }
 .hot-header{
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
   font-size: .36rem;
   padding: .2rem;
   margin-top: .2rem;
@@ -133,6 +135,8 @@ export default {
 }
 .hot-title{
   padding: .1rem 0;
+  whiteSpace();
+
 }
 .hot-price{
   color:#616161;

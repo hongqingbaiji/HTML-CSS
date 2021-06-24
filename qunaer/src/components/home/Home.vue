@@ -6,6 +6,7 @@
     <home-icon></home-icon>
     <home-location></home-location>
     <home-hot></home-hot>
+    <home-like></home-like>
     <div class="abc"></div>
   </div>
 </template>
@@ -16,6 +17,7 @@ import HomeSwiper from './pages/Swiper';
 import HomeIcon from './pages/Icon';
 import HomeLocation from './pages/Location';
 import HomeHot from './pages/Hot';
+import HomeLike from './pages/Like';
 
 export default {
   name: 'Home',
@@ -24,7 +26,8 @@ export default {
     HomeSwiper,
     HomeIcon,
     HomeLocation,
-    HomeHot
+    HomeHot,
+    HomeLike
   },
   data() {
     return {
@@ -36,7 +39,7 @@ export default {
 
 <style scoped>
 .home{
-  background-color: #f5f5f5;
+  background-color: #e5e5e5;
   width: 100%;
 }
 .abc{

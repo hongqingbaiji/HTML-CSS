@@ -37,7 +37,7 @@ export default {
       },{
         id:'02',
         imgUrl:require('@/assets/image/icon/icon2.png'),
-        text:'八达岭长城'
+        text:'八达岭长城真的很长哦'
       },{
         id:'03',
         imgUrl:require('@/assets/image/icon/icon3.png'),
@@ -91,7 +91,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
+@import '~@/assets/css/common.styl';
   .icons{
     width: 100%;
     background-color: #fff;
@@ -113,6 +114,7 @@ export default {
   .icon-item p{
     font-size: .28rem;
     color:#212121;
+    whiteSpace();
   }
 
 
