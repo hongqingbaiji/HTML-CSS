@@ -2,7 +2,7 @@
   <div class="home">
 
     <home-header></home-header>
-    <home-swiper></home-swiper>
+    <home-swiper :swiperList='swiperList'></home-swiper>
     <home-icon></home-icon>
     <home-location></home-location>
     <home-hot></home-hot>
@@ -18,6 +18,7 @@ import HomeIcon from './pages/Icon';
 import HomeLocation from './pages/Location';
 import HomeHot from './pages/Hot';
 import HomeLike from './pages/Like';
+import axios from 'axios';
 
 export default {
   name: 'Home',
@@ -31,8 +32,19 @@ export default {
   },
   data() {
     return {
-
+      swiperList:[]
     }
+  },
+
+  created(){
+    axios.get("/dataHome.json")
+    .then((res)=>{
+      const data = res.data.data[0];
+      this.swiperList = data.swiperList;
+      console.log(data);
+    }).catch((err)=>{
+      console.log(err);
+    })
   }
 }
 </script>

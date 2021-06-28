@@ -16,24 +16,10 @@
 <script>
   export default {
     name:'HeaderSwiper',
+    props:['swiperList'],
     data() {
       return {
-        swiperList:[
-          {
-            id:'01',
-            imgUrl: require('@/assets/image/swiper/swiper1.jpg')
-          },{
-            id:'02',
-            imgUrl: require('@/assets/image/swiper/swiper2.jpg')
-          },{
-            id:'03',
-            imgUrl: require('@/assets/image/swiper/swiper3.jpg')
-          },{
-            id:'04',
-            imgUrl: require('@/assets/image/swiper/swiper4.jpg')
-          }
-        ],
-
+      
         swiperOptions: {
           pagination: {
             el: '.swiper-pagination',
