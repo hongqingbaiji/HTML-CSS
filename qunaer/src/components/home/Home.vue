@@ -6,7 +6,7 @@
     <home-icon></home-icon>
     <home-location></home-location>
     <home-hot></home-hot>
-    <home-like></home-like>
+    <!-- <home-like></home-like> -->
     <div class="abc"></div>
   </div>
 </template>
@@ -35,6 +35,21 @@ export default {
       swiperList:[]
     }
   },
+<<<<<<< HEAD
+  mounted(){
+    this.fetchData();
+    
+  },
+  methods:{
+    fetchData(){
+      var _this = this;
+      this.$http.get('http:localhost:8080/static/mock/dataHome.json').then((res)=>{
+        console.log(res.data);
+      }).catch((err)=>{
+        console.log(err);
+      })
+    }
+=======
 
   created(){
     axios.get("/dataHome.json")
@@ -45,6 +60,7 @@ export default {
     }).catch((err)=>{
       console.log(err);
     })
+>>>>>>> eda4feff5d4caeaae1971489acb13671e00b4d30
   }
 }
 </script>

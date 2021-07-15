@@ -19,7 +19,10 @@
     props:['swiperList'],
     data() {
       return {
+<<<<<<< HEAD
+=======
       
+>>>>>>> eda4feff5d4caeaae1971489acb13671e00b4d30
         swiperOptions: {
           pagination: {
             el: '.swiper-pagination',

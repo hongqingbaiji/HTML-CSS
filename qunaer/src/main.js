@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import App from './App.vue';
+import App from './App';
+import axios from 'axios';
 import router from './router';
 
 // 引入初始化的CSS和字体图标
@@ -20,6 +21,9 @@ import axios from 'axios';
 Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false;
+
+// 引入axios
+Vue.prototype.$http = axios;
 
 new Vue({
   render: h => h(App),
